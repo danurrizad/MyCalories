@@ -1,5 +1,5 @@
 # MyCalories
-	Sebuah aplikasi untuk menjaga kalori yang dikonsumsi tetap terjaga dan rekomendasi kegiatan untuk membakarnya.
+	Merupakan sebuah aplikasi untuk menjaga kalori yang dikonsumsi tetap terjaga dan rekomendasi kegiatan untuk membakarnya.
 KELOMPOK 7
 Ketua Kelompok: Muhamad Thoriq Ahnaf (20/460553/TK/51142)
 Anggota 1: Danurrizad R. Darmoko (20/463597/TK/51589)
