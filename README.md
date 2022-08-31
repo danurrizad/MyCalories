@@ -1,7 +1,7 @@
 # MyCalories
 
 KELOMPOK 7
-Ketua Kelompok:
-Anggota 1:
-Anggota 2:
-Anggota 3:
+Ketua Kelompok: Muhamad Thoriq Ahnaf	
+Anggota 1: Danurrizad R. Darmoko
+Anggota 2: Saddan Syah Akbar
+
