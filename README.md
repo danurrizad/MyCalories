@@ -1,3 +1,8 @@
+layout: page
+title: "Home"
+permalink: "https://github.com/danurrizad/MyCalories/home"
+theme: hacker
+
 # MyCalories
 
 	Sebuah aplikasi untuk menjaga kalori yang dikonsumsi tetap terjaga dan rekomendasi kegiatan untuk membakarnya. Aplikasi ini bisa menghitung kalori, serta BMI (Body Mass Index) & BRI (Body Roundness Index)
