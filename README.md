@@ -1,6 +1,6 @@
 # MyCalories
 
-Sebuah aplikasi untuk menjaga kalori yang dikonsumsi tetap terjaga dan rekomendasi kegiatan untuk membakarnya. Aplikasi ini bisa menghitung kalori, serta BMI (Body Mass Index) & BRI (Body Roundness Index) <br>
+Sebuah aplikasi untuk menjaga kalori yang dikonsumsi tetap terjaga dan rekomendasi kegiatan untuk membakarnya. Aplikasi ini memiliki fitur menghitung kalori, serta BMI (Body Mass Index) & BRI (Body Roundness Index) <br>
 
 ## KELOMPOK 7
 
