@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyCalories
 {
-    internal class User
+    public class User
     {
     }
 }
