@@ -1,0 +1,17 @@
+D:\[codes]\MyCalories\MyCalories\MyCalories\bin\Debug\net6.0-windows\MyCalories.exe
+D:\[codes]\MyCalories\MyCalories\MyCalories\bin\Debug\net6.0-windows\MyCalories.deps.json
+D:\[codes]\MyCalories\MyCalories\MyCalories\bin\Debug\net6.0-windows\MyCalories.runtimeconfig.json
+D:\[codes]\MyCalories\MyCalories\MyCalories\bin\Debug\net6.0-windows\MyCalories.dll
+D:\[codes]\MyCalories\MyCalories\MyCalories\bin\Debug\net6.0-windows\MyCalories.pdb
+D:\[codes]\MyCalories\MyCalories\MyCalories\obj\Debug\net6.0-windows\MyCalories.csproj.AssemblyReference.cache
+D:\[codes]\MyCalories\MyCalories\MyCalories\obj\Debug\net6.0-windows\MyCalories.Homepage_Form.resources
+D:\[codes]\MyCalories\MyCalories\MyCalories\obj\Debug\net6.0-windows\MyCalories.csproj.GenerateResource.cache
+D:\[codes]\MyCalories\MyCalories\MyCalories\obj\Debug\net6.0-windows\MyCalories.GeneratedMSBuildEditorConfig.editorconfig
+D:\[codes]\MyCalories\MyCalories\MyCalories\obj\Debug\net6.0-windows\MyCalories.AssemblyInfoInputs.cache
+D:\[codes]\MyCalories\MyCalories\MyCalories\obj\Debug\net6.0-windows\MyCalories.AssemblyInfo.cs
+D:\[codes]\MyCalories\MyCalories\MyCalories\obj\Debug\net6.0-windows\MyCalories.csproj.CoreCompileInputs.cache
+D:\[codes]\MyCalories\MyCalories\MyCalories\obj\Debug\net6.0-windows\MyCalories.dll
+D:\[codes]\MyCalories\MyCalories\MyCalories\obj\Debug\net6.0-windows\refint\MyCalories.dll
+D:\[codes]\MyCalories\MyCalories\MyCalories\obj\Debug\net6.0-windows\MyCalories.pdb
+D:\[codes]\MyCalories\MyCalories\MyCalories\obj\Debug\net6.0-windows\MyCalories.genruntimeconfig.cache
+D:\[codes]\MyCalories\MyCalories\MyCalories\obj\Debug\net6.0-windows\ref\MyCalories.dll
