@@ -14,4 +14,4 @@ Anggota 2: Saddan Syah Akbar (20/460566/TK/51155)<br>
 ## Activity Diagram
 ![Diagram drawio](https://user-images.githubusercontent.com/73093118/190052100-a0177409-16d8-4e71-8d98-d8a65c48de0c.png)
 ## Class Diagram
-![MyCalories drawio (1)](https://user-images.githubusercontent.com/73093118/191284564-5f1f9524-be71-471f-bc1a-dcfb5f9031cc.png)
+![MyCalories drawio (2)](https://user-images.githubusercontent.com/73093118/191302156-85171720-9f42-4be2-85fe-63312716ea15.png)
