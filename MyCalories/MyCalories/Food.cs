@@ -10,6 +10,7 @@ namespace MyCalories
     public class Food
     {
         //Fields ------------------
+        private int _id;
         private string _name;
         private string _description;
         private float _calories;
@@ -19,6 +20,11 @@ namespace MyCalories
         private float _fat;
 
         // Properties ------------------
+        public int ID
+        {
+            get { return _id; }
+        }
+
         public string Name
         {
             get { return _name; }
