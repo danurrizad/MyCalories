@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +10,7 @@ namespace MyCalories
     public class Workout
     {
         //Fields ------------------
+        private int _id;
         private string _name;
         private string _description;
         private float _burned_calories;
@@ -17,6 +19,11 @@ namespace MyCalories
         private DateTime _date;
 
         // Properties ------------------
+        public int ID
+        {
+            get { return _id; }
+        }
+
         public string Name
         {
             get { return _name; }
