@@ -10,7 +10,7 @@ namespace MyCalories
     {
        //Fields ------------------
         private int _id;
-        private string _name;
+        private string _fullName;
         private int _age;
         private string _gender;
         private float _height;
@@ -25,8 +25,8 @@ namespace MyCalories
 
         public string Name
         {
-            get { return _name; }
-            set { _name = value; }
+            get { return _fullName; }
+            set { _fullName = value; }
         }
 
         public int Age
