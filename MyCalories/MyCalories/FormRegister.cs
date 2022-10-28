@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MyCalories
 {
-    public partial class FormLogin : Form
+    public partial class FormRegister : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -24,7 +24,7 @@ namespace MyCalories
             int nHeightEllipse // width of ellipse
 
         );
-        public FormLogin()
+        public FormRegister()
         {
             InitializeComponent();
         }

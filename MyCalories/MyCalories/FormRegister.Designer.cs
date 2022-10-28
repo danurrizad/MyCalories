@@ -1,6 +1,6 @@
 ﻿namespace MyCalories
 {
-    partial class FormLogin
+    partial class FormRegister
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegister));
             this.panelLogin = new System.Windows.Forms.Panel();
             this.panelKonfPass = new System.Windows.Forms.Panel();
             this.panelPass = new System.Windows.Forms.Panel();
