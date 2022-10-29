@@ -62,6 +62,8 @@
             // 
             // panelRegister
             // 
+            this.panelRegister.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelRegister.AutoScroll = true;
             this.panelRegister.BackColor = System.Drawing.Color.White;
             this.panelRegister.Controls.Add(this.panel3);
             this.panelRegister.Controls.Add(this.panelTbPass);
@@ -76,7 +78,7 @@
             this.panelRegister.Controls.Add(this.lblEmail);
             this.panelRegister.Controls.Add(this.label2);
             this.panelRegister.Controls.Add(this.label1);
-            this.panelRegister.Location = new System.Drawing.Point(584, 116);
+            this.panelRegister.Location = new System.Drawing.Point(584, 140);
             this.panelRegister.Name = "panelRegister";
             this.panelRegister.Size = new System.Drawing.Size(752, 729);
             this.panelRegister.TabIndex = 0;
@@ -300,10 +302,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MyCalories.Properties.Resources.image_2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
             this.Controls.Add(this.panelRegister);
+            this.DoubleBuffered = true;
             this.Name = "FormLogin";
             this.Text = "FormLogin";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panelRegister.ResumeLayout(false);
             this.panelRegister.PerformLayout();

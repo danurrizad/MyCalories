@@ -76,6 +76,7 @@
             // 
             // panelLogin
             // 
+            this.panelLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelLogin.BackColor = System.Drawing.Color.White;
             this.panelLogin.Controls.Add(this.panel3);
             this.panelLogin.Controls.Add(this.panel4);
@@ -422,10 +423,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1899, 942);
             this.Controls.Add(this.panelLogin);
+            this.DoubleBuffered = true;
             this.Name = "FormRegister";
             this.Text = "FormLogin";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
