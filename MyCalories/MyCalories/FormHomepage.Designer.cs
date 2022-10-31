@@ -34,39 +34,31 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panelNutriFact = new System.Windows.Forms.Panel();
             this.btnNutriFact = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelFoodEnConv = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btnFoodEnConv = new System.Windows.Forms.Button();
             this.panelBMR = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnBMR = new System.Windows.Forms.Button();
             this.panelBMI = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnBMI = new System.Windows.Forms.Button();
             this.panelDailyRecords = new System.Windows.Forms.Panel();
             this.btnDailyRecords = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblNamaUser = new System.Windows.Forms.Label();
             this.lblHalo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTitle1 = new System.Windows.Forms.Label();
+            this.lblTitle2 = new System.Windows.Forms.Label();
+            this.pnlFormLoader = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panelNutriFact.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panelFoodEnConv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelBMR.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelBMI.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelDailyRecords.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlFormLoader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -132,8 +124,7 @@
             // panelNutriFact
             // 
             this.panelNutriFact.Controls.Add(this.btnNutriFact);
-            this.panelNutriFact.Controls.Add(this.pictureBox6);
-            this.panelNutriFact.Location = new System.Drawing.Point(24, 656);
+            this.panelNutriFact.Location = new System.Drawing.Point(24, 665);
             this.panelNutriFact.Name = "panelNutriFact";
             this.panelNutriFact.Size = new System.Drawing.Size(321, 66);
             this.panelNutriFact.TabIndex = 11;
@@ -145,43 +136,24 @@
             this.btnNutriFact.FlatAppearance.BorderSize = 0;
             this.btnNutriFact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNutriFact.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNutriFact.Location = new System.Drawing.Point(64, 3);
+            this.btnNutriFact.Image = global::MyCalories.Properties.Resources.nutricion;
+            this.btnNutriFact.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNutriFact.Location = new System.Drawing.Point(13, 3);
             this.btnNutriFact.Name = "btnNutriFact";
-            this.btnNutriFact.Size = new System.Drawing.Size(239, 60);
+            this.btnNutriFact.Size = new System.Drawing.Size(290, 60);
             this.btnNutriFact.TabIndex = 7;
             this.btnNutriFact.Text = "Nutricion Facts List";
-            this.btnNutriFact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNutriFact.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNutriFact.UseVisualStyleBackColor = false;
             this.btnNutriFact.Click += new System.EventHandler(this.btnNutriFact_Click);
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = global::MyCalories.Properties.Resources.calculate;
-            this.pictureBox6.Location = new System.Drawing.Point(13, 10);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(49, 48);
-            this.pictureBox6.TabIndex = 5;
-            this.pictureBox6.TabStop = false;
-            // 
             // panelFoodEnConv
             // 
-            this.panelFoodEnConv.Controls.Add(this.pictureBox5);
             this.panelFoodEnConv.Controls.Add(this.btnFoodEnConv);
-            this.panelFoodEnConv.Location = new System.Drawing.Point(24, 540);
+            this.panelFoodEnConv.Location = new System.Drawing.Point(24, 544);
             this.panelFoodEnConv.Name = "panelFoodEnConv";
             this.panelFoodEnConv.Size = new System.Drawing.Size(321, 73);
             this.panelFoodEnConv.TabIndex = 10;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::MyCalories.Properties.Resources.calculate;
-            this.pictureBox5.Location = new System.Drawing.Point(13, 10);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(49, 48);
-            this.pictureBox5.TabIndex = 5;
-            this.pictureBox5.TabStop = false;
             // 
             // btnFoodEnConv
             // 
@@ -190,33 +162,23 @@
             this.btnFoodEnConv.FlatAppearance.BorderSize = 0;
             this.btnFoodEnConv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFoodEnConv.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFoodEnConv.Location = new System.Drawing.Point(65, 3);
+            this.btnFoodEnConv.Image = global::MyCalories.Properties.Resources.calculate;
+            this.btnFoodEnConv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFoodEnConv.Location = new System.Drawing.Point(13, 3);
             this.btnFoodEnConv.Name = "btnFoodEnConv";
-            this.btnFoodEnConv.Size = new System.Drawing.Size(238, 67);
+            this.btnFoodEnConv.Size = new System.Drawing.Size(278, 67);
             this.btnFoodEnConv.TabIndex = 6;
             this.btnFoodEnConv.Text = "Food Energy Converter";
-            this.btnFoodEnConv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFoodEnConv.UseVisualStyleBackColor = false;
             this.btnFoodEnConv.Click += new System.EventHandler(this.btnFoodEnConv_Click);
             // 
             // panelBMR
             // 
-            this.panelBMR.Controls.Add(this.pictureBox4);
             this.panelBMR.Controls.Add(this.btnBMR);
-            this.panelBMR.Location = new System.Drawing.Point(24, 427);
+            this.panelBMR.Location = new System.Drawing.Point(24, 426);
             this.panelBMR.Name = "panelBMR";
             this.panelBMR.Size = new System.Drawing.Size(321, 66);
             this.panelBMR.TabIndex = 9;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = global::MyCalories.Properties.Resources.calculate;
-            this.pictureBox4.Location = new System.Drawing.Point(13, 10);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(49, 48);
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
             // 
             // btnBMR
             // 
@@ -225,33 +187,23 @@
             this.btnBMR.FlatAppearance.BorderSize = 0;
             this.btnBMR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBMR.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBMR.Location = new System.Drawing.Point(68, 3);
+            this.btnBMR.Image = global::MyCalories.Properties.Resources.calculate;
+            this.btnBMR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBMR.Location = new System.Drawing.Point(13, 3);
             this.btnBMR.Name = "btnBMR";
-            this.btnBMR.Size = new System.Drawing.Size(235, 60);
+            this.btnBMR.Size = new System.Drawing.Size(290, 60);
             this.btnBMR.TabIndex = 5;
             this.btnBMR.Text = "Calculate BMR";
-            this.btnBMR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBMR.UseVisualStyleBackColor = false;
             this.btnBMR.Click += new System.EventHandler(this.btnBMR_Click);
             // 
             // panelBMI
             // 
-            this.panelBMI.Controls.Add(this.pictureBox3);
             this.panelBMI.Controls.Add(this.btnBMI);
             this.panelBMI.Location = new System.Drawing.Point(24, 307);
             this.panelBMI.Name = "panelBMI";
             this.panelBMI.Size = new System.Drawing.Size(321, 66);
             this.panelBMI.TabIndex = 9;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::MyCalories.Properties.Resources.calculate2;
-            this.pictureBox3.Location = new System.Drawing.Point(13, 10);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(49, 48);
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
             // 
             // btnBMI
             // 
@@ -260,19 +212,19 @@
             this.btnBMI.FlatAppearance.BorderSize = 0;
             this.btnBMI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBMI.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBMI.Location = new System.Drawing.Point(68, 3);
+            this.btnBMI.Image = global::MyCalories.Properties.Resources.calculate2;
+            this.btnBMI.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBMI.Location = new System.Drawing.Point(13, 3);
             this.btnBMI.Name = "btnBMI";
-            this.btnBMI.Size = new System.Drawing.Size(235, 60);
+            this.btnBMI.Size = new System.Drawing.Size(290, 60);
             this.btnBMI.TabIndex = 4;
             this.btnBMI.Text = "Calculate BMI";
-            this.btnBMI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBMI.UseVisualStyleBackColor = false;
             this.btnBMI.Click += new System.EventHandler(this.btnBMI_Click);
             // 
             // panelDailyRecords
             // 
             this.panelDailyRecords.Controls.Add(this.btnDailyRecords);
-            this.panelDailyRecords.Controls.Add(this.pictureBox2);
             this.panelDailyRecords.Location = new System.Drawing.Point(24, 188);
             this.panelDailyRecords.Name = "panelDailyRecords";
             this.panelDailyRecords.Size = new System.Drawing.Size(321, 66);
@@ -285,24 +237,15 @@
             this.btnDailyRecords.FlatAppearance.BorderSize = 0;
             this.btnDailyRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDailyRecords.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDailyRecords.Location = new System.Drawing.Point(65, 3);
+            this.btnDailyRecords.Image = global::MyCalories.Properties.Resources.dailyrecord;
+            this.btnDailyRecords.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDailyRecords.Location = new System.Drawing.Point(13, 3);
             this.btnDailyRecords.Name = "btnDailyRecords";
-            this.btnDailyRecords.Size = new System.Drawing.Size(238, 60);
+            this.btnDailyRecords.Size = new System.Drawing.Size(290, 60);
             this.btnDailyRecords.TabIndex = 3;
             this.btnDailyRecords.Text = "Daily Records";
-            this.btnDailyRecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDailyRecords.UseVisualStyleBackColor = false;
             this.btnDailyRecords.Click += new System.EventHandler(this.btnDailyRecords_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::MyCalories.Properties.Resources.dailyrecord;
-            this.pictureBox2.Location = new System.Drawing.Point(13, 10);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(49, 48);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
             // 
             // lblNamaUser
             // 
@@ -335,29 +278,46 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // lblTitle1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Rockwell", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(463, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(434, 59);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Welcome back to";
+            this.lblTitle1.AutoSize = true;
+            this.lblTitle1.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle1.Font = new System.Drawing.Font("Rockwell", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle1.ForeColor = System.Drawing.Color.White;
+            this.lblTitle1.Location = new System.Drawing.Point(107, 59);
+            this.lblTitle1.Name = "lblTitle1";
+            this.lblTitle1.Size = new System.Drawing.Size(306, 59);
+            this.lblTitle1.TabIndex = 1;
+            this.lblTitle1.Text = "Welcome to";
             // 
-            // label2
+            // lblTitle2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Rockwell", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(451, 133);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(608, 117);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "MyCalories";
+            this.lblTitle2.AutoSize = true;
+            this.lblTitle2.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle2.Font = new System.Drawing.Font("Rockwell", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle2.ForeColor = System.Drawing.Color.White;
+            this.lblTitle2.Location = new System.Drawing.Point(95, 124);
+            this.lblTitle2.Name = "lblTitle2";
+            this.lblTitle2.Size = new System.Drawing.Size(608, 117);
+            this.lblTitle2.TabIndex = 2;
+            this.lblTitle2.Text = "MyCalories";
+            // 
+            // pnlFormLoader
+            // 
+            this.pnlFormLoader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFormLoader.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFormLoader.BackgroundImage = global::MyCalories.Properties.Resources.image_2;
+            this.pnlFormLoader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlFormLoader.Controls.Add(this.lblTitle2);
+            this.pnlFormLoader.Controls.Add(this.label3);
+            this.pnlFormLoader.Controls.Add(this.lblTitle1);
+            this.pnlFormLoader.Controls.Add(this.linkLabel2);
+            this.pnlFormLoader.Location = new System.Drawing.Point(367, -1);
+            this.pnlFormLoader.Name = "pnlFormLoader";
+            this.pnlFormLoader.Size = new System.Drawing.Size(1533, 1024);
+            this.pnlFormLoader.TabIndex = 5;
             // 
             // label3
             // 
@@ -365,25 +325,25 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Rockwell", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(475, 285);
+            this.label3.Location = new System.Drawing.Point(96, 272);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(422, 30);
-            this.label3.TabIndex = 3;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Want to trace your daily calories?";
             // 
-            // linkLabel1
+            // linkLabel2
             // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Font = new System.Drawing.Font("Rockwell", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(903, 285);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(257, 32);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Set your goals here";
+            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel2.Font = new System.Drawing.Font("Rockwell", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel2.LinkColor = System.Drawing.Color.White;
+            this.linkLabel2.Location = new System.Drawing.Point(534, 270);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(257, 32);
+            this.linkLabel2.TabIndex = 7;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Set your goals here";
             // 
             // FormHomepage
             // 
@@ -394,33 +354,27 @@
             this.BackgroundImage = global::MyCalories.Properties.Resources.image_2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlFormLoader);
             this.DoubleBuffered = true;
             this.MinimumSize = new System.Drawing.Size(1920, 1080);
             this.Name = "FormHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormHomepage";
+            this.Text = "Homepage";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormHomepage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panelNutriFact.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panelFoodEnConv.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panelBMR.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelBMI.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelDailyRecords.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlFormLoader.ResumeLayout(false);
+            this.pnlFormLoader.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -435,22 +389,18 @@
         private Button btnBMI;
         private Button btnDailyRecords;
         private Label lblNamaUser;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private LinkLabel linkLabel1;
+        private Label lblTitle1;
+        private Label lblTitle2;
         private Panel panelDailyRecords;
-        private PictureBox pictureBox2;
         private Panel panelBMI;
-        private PictureBox pictureBox3;
         private Panel panelBMR;
-        private PictureBox pictureBox4;
         private Panel panelNutriFact;
-        private PictureBox pictureBox6;
         private Panel panelFoodEnConv;
-        private PictureBox pictureBox5;
         private Label label4;
         private PictureBox pictureBox7;
         private Button btnLogout;
+        private Panel pnlFormLoader;
+        private Label label3;
+        private LinkLabel linkLabel2;
     }
 }

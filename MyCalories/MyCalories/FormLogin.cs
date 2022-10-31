@@ -28,7 +28,7 @@ namespace MyCalories
         {
             InitializeComponent();
         }
-
+        
         private void FormLogin_Load(object sender, EventArgs e)
         {
             panelRegister.BackColor = Color.FromArgb(220, 255, 255, 255);
@@ -44,6 +44,15 @@ namespace MyCalories
             panelPass.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panelPass.Width, panelPass.Height, 35, 35));
 
             btnLogin.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, btnLogin.Width, btnLogin.Height, 75, 75));
+
+            //Membuat Warna Mouse Back Button Daftar Sekarang Menjadi Transparan
+            btnDaftarSkrg.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnDaftarSkrg.FlatAppearance.MouseOverBackColor = Color.Transparent;
+
+            btnForgotPass.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnForgotPass.FlatAppearance.MouseOverBackColor = Color.Transparent;
+
+            
         }
 
         private void btnDaftarSkrg_Click(object sender, EventArgs e)
@@ -75,6 +84,17 @@ namespace MyCalories
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            User user = new User();
+            if (user.Login(tbEmail.Text, tbPass.Text))
+            {
+                FormHomepage formHomepage = new FormHomepage();
+                formHomepage.Show();
+                this.Hide();
+            }
+            else 
+            {
+                MessageBox.Show("Email atau password yang anda masukkan salah");
+            }
 
         }
     }

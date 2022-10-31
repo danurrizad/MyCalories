@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,15 @@ namespace MyCalories
         private float _weight;
         private string _healthStatus;
 
+        //Constructor
+        
+        public User() { }
+
+        public User(string _email, string _password)
+        {
+            Email = _email;
+            Password = _password;
+        }
         //Properties ------------------
         public int ID
         {
@@ -72,6 +82,18 @@ namespace MyCalories
         }
 
         //Method ------------------
+
+        public bool Login(string Email, string Password)
+        {
+            if (Email == "admin@gmail.com" && Password == "admin")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public float CalculateBMI()
         {
             float BMI = 0;

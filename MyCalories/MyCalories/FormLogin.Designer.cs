@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panelRegister = new System.Windows.Forms.Panel();
+            this.btnForgotPass = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelTbPass = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -65,6 +66,7 @@
             this.panelRegister.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelRegister.AutoScroll = true;
             this.panelRegister.BackColor = System.Drawing.Color.White;
+            this.panelRegister.Controls.Add(this.btnForgotPass);
             this.panelRegister.Controls.Add(this.panel3);
             this.panelRegister.Controls.Add(this.panelTbPass);
             this.panelRegister.Controls.Add(this.panelPass);
@@ -82,6 +84,21 @@
             this.panelRegister.Name = "panelRegister";
             this.panelRegister.Size = new System.Drawing.Size(752, 729);
             this.panelRegister.TabIndex = 0;
+            // 
+            // btnForgotPass
+            // 
+            this.btnForgotPass.BackColor = System.Drawing.Color.Transparent;
+            this.btnForgotPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnForgotPass.FlatAppearance.BorderSize = 0;
+            this.btnForgotPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnForgotPass.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnForgotPass.ForeColor = System.Drawing.Color.Blue;
+            this.btnForgotPass.Location = new System.Drawing.Point(497, 411);
+            this.btnForgotPass.Name = "btnForgotPass";
+            this.btnForgotPass.Size = new System.Drawing.Size(165, 34);
+            this.btnForgotPass.TabIndex = 26;
+            this.btnForgotPass.Text = "Forgot Password?";
+            this.btnForgotPass.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
@@ -171,6 +188,7 @@
             // 
             this.btnDaftarSkrg.BackColor = System.Drawing.Color.Transparent;
             this.btnDaftarSkrg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDaftarSkrg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDaftarSkrg.FlatAppearance.BorderSize = 0;
             this.btnDaftarSkrg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDaftarSkrg.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -230,6 +248,7 @@
             this.btnLogin.TabIndex = 17;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // panelEmail
             // 
@@ -348,5 +367,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox4;
+        private Button btnForgotPass;
     }
 }

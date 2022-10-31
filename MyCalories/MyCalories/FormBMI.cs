@@ -1,8 +1,8 @@
 namespace MyCalories
 {
-    public partial class Homepage_Form : Form
+    public partial class FormBMI : Form
     {
-        public Homepage_Form()
+        public FormBMI()
         {
             InitializeComponent();
         }

@@ -52,6 +52,10 @@ namespace MyCalories
 
             btnDaftar.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, btnDaftar.Width, btnDaftar.Height, 75, 75));
 
+            //Membuat Warna Mouse Back Button Daftar Sekarang Menjadi Transparan
+            btnLoginSkrg.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnLoginSkrg.FlatAppearance.MouseOverBackColor = Color.Transparent;
+
 
         }
 
