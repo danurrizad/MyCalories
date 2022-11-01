@@ -87,7 +87,7 @@ namespace MyCalories
             User user = new User();
             if (user.Login(tbEmail.Text, tbPass.Text))
             {
-                FormHomepage formHomepage = new FormHomepage();
+                FormDashboard formHomepage = new FormDashboard();
                 formHomepage.Show();
                 this.Hide();
             }

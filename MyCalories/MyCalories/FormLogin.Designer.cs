@@ -326,7 +326,7 @@
             this.Controls.Add(this.panelRegister);
             this.DoubleBuffered = true;
             this.Name = "FormLogin";
-            this.Text = "FormLogin";
+            this.Text = "Login Page";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panelRegister.ResumeLayout(false);

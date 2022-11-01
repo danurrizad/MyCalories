@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace MyCalories
 {
-    public partial class FormHomepage : Form
+    public partial class FormDashboard : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -25,11 +25,11 @@ namespace MyCalories
             int nHeightEllipse // width of ellipse
 
         );
-        private bool stopMouseLeave = false;
   
-        public FormHomepage()
+        public FormDashboard()
         {
             InitializeComponent();
+
             //Membuat Button Dengan Bentuk Rounded Border
             panelDailyRecords.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panelDailyRecords.Width, panelDailyRecords.Height, 50, 50));
             panelBMI.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panelBMI.Width, panelBMI.Height, 50, 50));
@@ -56,12 +56,36 @@ namespace MyCalories
 
             btnLogout.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnLogout.FlatAppearance.MouseOverBackColor = Color.Transparent;
+
+            btnLogo.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnLogo.FlatAppearance.MouseOverBackColor = Color.Transparent;
         }
         private void FormHomepage_Load(object sender, EventArgs e)
         {
-            
+            //Menampilkan FormHome
+            FormHome formHome = new FormHome() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formHome.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(formHome);
+            formHome.Show();
         }
+        //--------------------------------------------------------LOGO BUTTON-------------------------------------------------------------------------------------
+        private void btnLogo_Click(object sender, EventArgs e)
+        {
+            //Menampilkan FormHome
+            this.pnlFormLoader.Controls.Clear();
+            FormHome formHome = new FormHome() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formHome.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(formHome);
+            formHome.Show();
+            this.Text = "Home";
 
+            //Backcolor Button Lain Menjadi Transparan
+            panelDailyRecords.BackColor = Color.Transparent;
+            panelBMI.BackColor = Color.Transparent;
+            panelBMR.BackColor = Color.Transparent;
+            panelFoodEnConv.BackColor = Color.Transparent;
+            panelNutriFact.BackColor = Color.Transparent;
+        }
         //--------------------------------------------------------BUTTON DAILY RECORDS----------------------------------------------------------------------
         private void btnDailyRecords_Click(object sender, EventArgs e)
         {
@@ -79,6 +103,9 @@ namespace MyCalories
             formDailyRecords.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(formDailyRecords);
             formDailyRecords.Show();
+
+            //Mengubah Judul Form
+            this.Text = "Daily Records";
         }
         //--------------------------------------------------------Button Calculate BMI----------------------------------------------------------------------
       
@@ -99,6 +126,9 @@ namespace MyCalories
             formBMI.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(formBMI);
             formBMI.Show();
+
+            //Mengubah Judul Form
+            this.Text = "Calculate BMI";
 
         }
 
@@ -122,6 +152,9 @@ namespace MyCalories
             this.pnlFormLoader.Controls.Add(formBMR);
             formBMR.Show();
 
+            //Mengubah Judul Form
+            this.Text = "Calculate BMR";
+
         }
 
 
@@ -143,6 +176,8 @@ namespace MyCalories
             this.pnlFormLoader.Controls.Add(formFoodEnConv);
             formFoodEnConv.Show();
 
+            //Mengubah Judul Form
+            this.Text = "Food Energy Converter";
         }
 
 
@@ -163,6 +198,9 @@ namespace MyCalories
             formNutriFacts.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(formNutriFacts);
             formNutriFacts.Show();
+
+            //Mengubah Judul Form
+            this.Text = "Nutricion Facts";
         }
 
 
@@ -172,6 +210,19 @@ namespace MyCalories
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
             this.Hide();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Menampilkan FormDailyRecords
+            this.pnlFormLoader.Controls.Clear();
+            FormDailyRecords formDailyRecords = new FormDailyRecords() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formDailyRecords.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(formDailyRecords);
+            formDailyRecords.Show();
+
+            //Mengubah Judul Form
+            this.Text = "Daily Records";
         }
 
         
