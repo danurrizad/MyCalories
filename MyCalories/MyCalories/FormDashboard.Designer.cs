@@ -1,6 +1,6 @@
 ﻿namespace MyCalories
 {
-    partial class FormHomepage
+    partial class FormDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogo = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.panelNutriFact = new System.Windows.Forms.Panel();
             this.btnNutriFact = new System.Windows.Forms.Button();
             this.panelFoodEnConv = new System.Windows.Forms.Panel();
@@ -44,12 +44,7 @@
             this.btnDailyRecords = new System.Windows.Forms.Button();
             this.lblNamaUser = new System.Windows.Forms.Label();
             this.lblHalo = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblTitle1 = new System.Windows.Forms.Label();
-            this.lblTitle2 = new System.Windows.Forms.Label();
             this.pnlFormLoader = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panelNutriFact.SuspendLayout();
@@ -57,8 +52,6 @@
             this.panelBMR.SuspendLayout();
             this.panelBMI.SuspendLayout();
             this.panelDailyRecords.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlFormLoader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,9 +59,9 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnLogo);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.btnLogout);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.panelNutriFact);
             this.panel1.Controls.Add(this.panelFoodEnConv);
             this.panel1.Controls.Add(this.panelBMR);
@@ -76,15 +69,27 @@
             this.panel1.Controls.Add(this.panelDailyRecords);
             this.panel1.Controls.Add(this.lblNamaUser);
             this.panel1.Controls.Add(this.lblHalo);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(369, 1024);
             this.panel1.TabIndex = 0;
             // 
+            // btnLogo
+            // 
+            this.btnLogo.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogo.FlatAppearance.BorderSize = 0;
+            this.btnLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogo.Image = global::MyCalories.Properties.Resources.logo1;
+            this.btnLogo.Location = new System.Drawing.Point(11, 19);
+            this.btnLogo.Name = "btnLogo";
+            this.btnLogo.Size = new System.Drawing.Size(83, 86);
+            this.btnLogo.TabIndex = 15;
+            this.btnLogo.UseVisualStyleBackColor = false;
+            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
+            // 
             // pictureBox7
             // 
-            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = global::MyCalories.Properties.Resources.logout;
             this.pictureBox7.Location = new System.Drawing.Point(37, 942);
@@ -95,7 +100,6 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLogout.BackColor = System.Drawing.Color.Transparent;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.FlatAppearance.BorderSize = 0;
@@ -109,17 +113,6 @@
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(21, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 20);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "LOGO";
             // 
             // panelNutriFact
             // 
@@ -267,41 +260,6 @@
             this.lblHalo.TabIndex = 1;
             this.lblHalo.Text = "Halo,";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::MyCalories.Properties.Resources.Ellipse_1;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 81);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblTitle1
-            // 
-            this.lblTitle1.AutoSize = true;
-            this.lblTitle1.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle1.Font = new System.Drawing.Font("Rockwell", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle1.ForeColor = System.Drawing.Color.White;
-            this.lblTitle1.Location = new System.Drawing.Point(107, 59);
-            this.lblTitle1.Name = "lblTitle1";
-            this.lblTitle1.Size = new System.Drawing.Size(306, 59);
-            this.lblTitle1.TabIndex = 1;
-            this.lblTitle1.Text = "Welcome to";
-            // 
-            // lblTitle2
-            // 
-            this.lblTitle2.AutoSize = true;
-            this.lblTitle2.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle2.Font = new System.Drawing.Font("Rockwell", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle2.ForeColor = System.Drawing.Color.White;
-            this.lblTitle2.Location = new System.Drawing.Point(95, 124);
-            this.lblTitle2.Name = "lblTitle2";
-            this.lblTitle2.Size = new System.Drawing.Size(608, 117);
-            this.lblTitle2.TabIndex = 2;
-            this.lblTitle2.Text = "MyCalories";
-            // 
             // pnlFormLoader
             // 
             this.pnlFormLoader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -310,54 +268,21 @@
             this.pnlFormLoader.BackColor = System.Drawing.Color.Transparent;
             this.pnlFormLoader.BackgroundImage = global::MyCalories.Properties.Resources.image_2;
             this.pnlFormLoader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlFormLoader.Controls.Add(this.lblTitle2);
-            this.pnlFormLoader.Controls.Add(this.label3);
-            this.pnlFormLoader.Controls.Add(this.lblTitle1);
-            this.pnlFormLoader.Controls.Add(this.linkLabel2);
             this.pnlFormLoader.Location = new System.Drawing.Point(367, -1);
             this.pnlFormLoader.Name = "pnlFormLoader";
             this.pnlFormLoader.Size = new System.Drawing.Size(1533, 1024);
             this.pnlFormLoader.TabIndex = 5;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Rockwell", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(96, 272);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(422, 30);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Want to trace your daily calories?";
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel2.Font = new System.Drawing.Font("Rockwell", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel2.LinkColor = System.Drawing.Color.White;
-            this.linkLabel2.Location = new System.Drawing.Point(534, 270);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(257, 32);
-            this.linkLabel2.TabIndex = 7;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Set your goals here";
-            // 
             // FormHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::MyCalories.Properties.Resources.image_2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlFormLoader);
             this.DoubleBuffered = true;
-            this.MinimumSize = new System.Drawing.Size(1920, 1080);
             this.Name = "FormHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Homepage";
@@ -371,9 +296,6 @@
             this.panelBMR.ResumeLayout(false);
             this.panelBMI.ResumeLayout(false);
             this.panelDailyRecords.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlFormLoader.ResumeLayout(false);
-            this.pnlFormLoader.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -382,25 +304,20 @@
 
         private Panel panel1;
         private Label lblHalo;
-        private PictureBox pictureBox1;
         private Button btnNutriFact;
         private Button btnFoodEnConv;
         private Button btnBMR;
         private Button btnBMI;
         private Button btnDailyRecords;
         private Label lblNamaUser;
-        private Label lblTitle1;
-        private Label lblTitle2;
         private Panel panelDailyRecords;
         private Panel panelBMI;
         private Panel panelBMR;
         private Panel panelNutriFact;
         private Panel panelFoodEnConv;
-        private Label label4;
         private PictureBox pictureBox7;
         private Button btnLogout;
         private Panel pnlFormLoader;
-        private Label label3;
-        private LinkLabel linkLabel2;
+        private Button btnLogo;
     }
 }

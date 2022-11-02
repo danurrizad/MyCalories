@@ -99,7 +99,7 @@
             this.panelLogin.Controls.Add(this.lblNama);
             this.panelLogin.Controls.Add(this.panelPass);
             this.panelLogin.Controls.Add(this.panelKonfPass);
-            this.panelLogin.Location = new System.Drawing.Point(584, 82);
+            this.panelLogin.Location = new System.Drawing.Point(584, 123);
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(751, 788);
             this.panelLogin.TabIndex = 0;
@@ -424,11 +424,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1899, 942);
+            this.ClientSize = new System.Drawing.Size(1898, 1024);
             this.Controls.Add(this.panelLogin);
             this.DoubleBuffered = true;
             this.Name = "FormRegister";
-            this.Text = "FormLogin";
+            this.Text = "Register Page";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panelLogin.ResumeLayout(false);
