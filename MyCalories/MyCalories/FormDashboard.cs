@@ -9,56 +9,28 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MyCalories
 {
     public partial class FormDashboard : Form
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // height of ellipse
-            int nHeightEllipse // width of ellipse
-
-        );
   
-        public FormDashboard()
+        public FormDashboard(User user)
         {
             InitializeComponent();
 
-            //Membuat Button Dengan Bentuk Rounded Border
-            panelDailyRecords.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panelDailyRecords.Width, panelDailyRecords.Height, 50, 50));
-            panelBMI.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panelBMI.Width, panelBMI.Height, 50, 50));
-            panelBMR.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panelBMR.Width, panelBMR.Height, 50, 50));
-            panelFoodEnConv.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panelFoodEnConv.Width, panelFoodEnConv.Height, 50, 50));
-            panelNutriFact.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panelNutriFact.Width, panelNutriFact.Height, 50, 50));
-
-
             //Membuat Back Color Button Pada Sidebar ketika MouseHover menjadi Transparan
-            btnDailyRecords.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnDailyRecords.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnDailyRecords.FlatAppearance.MouseDownBackColor = btnDailyRecords.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnBMI.FlatAppearance.MouseDownBackColor = btnBMI.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnBMR.FlatAppearance.MouseDownBackColor = btnBMR.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnFoodEnConv.FlatAppearance.MouseDownBackColor = btnFoodEnConv.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnNutriFact.FlatAppearance.MouseDownBackColor =  btnNutriFact.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnLogout.FlatAppearance.MouseDownBackColor = btnLogout.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnLogo.FlatAppearance.MouseDownBackColor = btnLogo.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnUsers.FlatAppearance.MouseDownBackColor = btnUsers.FlatAppearance.MouseOverBackColor = Color.Transparent;
 
-            btnBMI.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnBMI.FlatAppearance.MouseOverBackColor = Color.Transparent;
-
-            btnBMR.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnBMR.FlatAppearance.MouseOverBackColor = Color.Transparent;
-
-            btnFoodEnConv.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnFoodEnConv.FlatAppearance.MouseOverBackColor = Color.Transparent;
-
-            btnNutriFact.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnNutriFact.FlatAppearance.MouseOverBackColor = Color.Transparent;
-
-            btnLogout.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnLogout.FlatAppearance.MouseOverBackColor = Color.Transparent;
-
-            btnLogo.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnLogo.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            lblNamaUser.Text = "Hello " + user.Name + "\nas " + user.Roles;
         }
         private void FormHomepage_Load(object sender, EventArgs e)
         {
@@ -68,6 +40,13 @@ namespace MyCalories
             this.pnlFormLoader.Controls.Add(formHome);
             formHome.Show();
         }
+
+        private void ClearButtonColor()
+        {
+            panelDailyRecords.BackColor = panelBMI.BackColor = panelBMR.BackColor = panelFoodEnConv.BackColor = panelNutriFact.BackColor = panelUser.BackColor = Color.Transparent;
+        }
+
+
         //--------------------------------------------------------LOGO BUTTON-------------------------------------------------------------------------------------
         private void btnLogo_Click(object sender, EventArgs e)
         {
@@ -80,21 +59,13 @@ namespace MyCalories
             this.Text = "Home";
 
             //Backcolor Button Lain Menjadi Transparan
-            panelDailyRecords.BackColor = Color.Transparent;
-            panelBMI.BackColor = Color.Transparent;
-            panelBMR.BackColor = Color.Transparent;
-            panelFoodEnConv.BackColor = Color.Transparent;
-            panelNutriFact.BackColor = Color.Transparent;
+            ClearButtonColor();
         }
         //--------------------------------------------------------BUTTON DAILY RECORDS----------------------------------------------------------------------
         private void btnDailyRecords_Click(object sender, EventArgs e)
         {
             //Backcolor Button Lain Menjadi Transparan
-            panelBMI.BackColor = Color.Transparent;
-            panelBMR.BackColor = Color.Transparent;
-            panelFoodEnConv.BackColor = Color.Transparent;
-            panelNutriFact.BackColor = Color.Transparent;
-
+            ClearButtonColor();
             panelDailyRecords.BackColor = Color.FromArgb(156, 156, 156);
 
             //Menampilkan FormDailyRecords
@@ -113,11 +84,7 @@ namespace MyCalories
         private void btnBMI_Click(object sender, EventArgs e)
         {
             //Backcolor Button Lain Menjadi Transparan
-            panelDailyRecords.BackColor = Color.Transparent;
-            panelBMR.BackColor = Color.Transparent;
-            panelFoodEnConv.BackColor = Color.Transparent;
-            panelNutriFact.BackColor = Color.Transparent;
-
+            ClearButtonColor();
             panelBMI.BackColor = Color.FromArgb(156, 156, 156);
 
             //Menampilkan FormBMI
@@ -137,11 +104,7 @@ namespace MyCalories
         private void btnBMR_Click(object sender, EventArgs e)
         {
             //Backcolor Button Lain Menjadi Transparan
-            panelBMI.BackColor = Color.Transparent;
-            panelDailyRecords.BackColor = Color.Transparent;
-            panelFoodEnConv.BackColor = Color.Transparent;
-            panelNutriFact.BackColor = Color.Transparent;
-
+            ClearButtonColor();
             panelBMR.BackColor = Color.FromArgb(156, 156, 156);
 
 
@@ -159,14 +122,10 @@ namespace MyCalories
 
 
         //--------------------------------------------------------Button Food Energy Converter----------------------------------------------------------------------
-        private void btnFoodEnConv_Click(object sender, EventArgs e)
+        private void btnFoodEnConv_Click_1(object sender, EventArgs e)
         {
             //Backcolor Button Lain Menjadi Transparan
-            panelBMI.BackColor = Color.Transparent;
-            panelBMR.BackColor = Color.Transparent;
-            panelDailyRecords.BackColor = Color.Transparent;
-            panelNutriFact.BackColor = Color.Transparent;
-
+            ClearButtonColor();
             panelFoodEnConv.BackColor = Color.FromArgb(156, 156, 156);
 
             //Menampilkan FormFoodEnConv
@@ -180,16 +139,11 @@ namespace MyCalories
             this.Text = "Food Energy Converter";
         }
 
-
         //--------------------------------------------------------Button Nutricion Facts List----------------------------------------------------------------------
         private void btnNutriFact_Click(object sender, EventArgs e)
         {
             //Backcolor Button Lain Menjadi Transparan
-            panelBMI.BackColor = Color.Transparent;
-            panelBMR.BackColor = Color.Transparent;
-            panelFoodEnConv.BackColor = Color.Transparent;
-            panelDailyRecords.BackColor = Color.Transparent;
-
+            ClearButtonColor();
             panelNutriFact.BackColor = Color.FromArgb(156, 156, 156);
 
             //Menampilkan FormNutriFacts
@@ -224,7 +178,32 @@ namespace MyCalories
             //Mengubah Judul Form
             this.Text = "Daily Records";
         }
+        private void btnUsers_Click_1(object sender, EventArgs e)
+        {
+            ClearButtonColor();
+            panelUser.BackColor = Color.FromArgb(156, 156, 156);
 
-        
+            //Menampilkan FormNutriFacts
+            this.pnlFormLoader.Controls.Clear();
+            FormUser formUser = new FormUser() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formUser.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(formUser);
+            formUser.Show();
+
+            //Mengubah Judul Form
+            this.Text = "Users";
+        }
+
+        private void panelUser_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FormDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+
     }
 }

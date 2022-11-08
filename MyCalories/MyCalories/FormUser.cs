@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MyCalories
 {
-    public partial class FormNutriFacts : Form
+    public partial class FormUser : Form
     {
-        public FormNutriFacts()
+        public FormUser()
         {
             InitializeComponent();
         }

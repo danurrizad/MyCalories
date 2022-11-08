@@ -17,8 +17,8 @@ namespace MyCalories
         private string _password;   
         private int _age;
         private string _gender;
-        private float _height;
-        private float _weight;
+        private double _height;
+        private double _weight;
         private string _healthStatus;
         private string _roles;
 
@@ -70,13 +70,13 @@ namespace MyCalories
             set { _gender = value; }
         }
 
-        public float Height
+        public double Height
         {
             get { return _height; }
             set { _height = value; }
         }
 
-        public float Weight
+        public double Weight
         {
             get { return _weight; }
             set { _weight = value; }
@@ -125,16 +125,24 @@ namespace MyCalories
 
         }
 
-        public float CalculateBMI()
+        public double CalculateBMI()
         {
-            float BMI = 0;
+            double BMI = 0;
             return BMI;
         }
 
-        public float CalculateBMR()
+        public double CalculateBMR()
         {
-            float BMR = 0;
+            double BMR = 0;
+
+            // Rumus BMR berdasarkan Harris-Benedict
+            if(this.Gender == "male")
+                BMR = 88.362 + (13.397 * this.Weight) + (4.799 * this.Height) - (5.677 * this.Age);
+            else
+                BMR = 88.362 + (13.397 * this.Weight) + (4.799 * this.Height) - (5.677 * this.Age);
+
             return BMR;
+
         }
 
         public void AddUser()

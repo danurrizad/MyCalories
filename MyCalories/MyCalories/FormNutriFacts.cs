@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace MyCalories
 {
-    public partial class FormBMR : Form
+    public partial class FormNutriFacts : Form
     {
-        public FormBMR()
+        public FormNutriFacts()
         {
             InitializeComponent();
+        }
+
+        private void FormNutriFacts_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
