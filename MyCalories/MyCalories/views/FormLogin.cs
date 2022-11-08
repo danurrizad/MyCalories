@@ -13,17 +13,6 @@ namespace MyCalories
 {
     public partial class FormLogin : Form
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // height of ellipse
-            int nHeightEllipse // width of ellipse
-
-        );
         public FormLogin()
         {
             InitializeComponent();
@@ -32,27 +21,11 @@ namespace MyCalories
         private void FormLogin_Load(object sender, EventArgs e)
         {
             panelRegister.BackColor = Color.FromArgb(220, 255, 255, 255);
-
-            //Membuat Bentuk Panel dan Button Menjadi Rounded Border
-            panelRegister.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panelRegister.Width, panelRegister.Height, 50, 50));
-
-            panelTbEmail.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panelTbEmail.Width, panelTbEmail.Height, 30, 30));
-            panelEmail.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panelEmail.Width, panelEmail.Height, 35, 35));
-
-
-            panelTbPass.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panelTbPass.Width, panelTbPass.Height, 30, 30));
-            panelPass.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panelPass.Width, panelPass.Height, 35, 35));
-
-            btnLogin.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, btnLogin.Width, btnLogin.Height, 75, 75));
+ 
 
             //Membuat Warna Mouse Back Button Daftar Sekarang Menjadi Transparan
             btnDaftarSkrg.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnDaftarSkrg.FlatAppearance.MouseOverBackColor = Color.Transparent;
-
-            btnForgotPass.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnForgotPass.FlatAppearance.MouseOverBackColor = Color.Transparent;
-
-            
+            btnDaftarSkrg.FlatAppearance.MouseOverBackColor = Color.Transparent;   
         }
 
         private void btnDaftarSkrg_Click(object sender, EventArgs e)
@@ -85,7 +58,11 @@ namespace MyCalories
         private void btnLogin_Click(object sender, EventArgs e)
         {
             User user = new User();
-            if (user.Login(tbEmail.Text, tbPass.Text))
+            if (tbEmail.Text == "" || tbPass.Text == "")
+            {
+                MessageBox.Show("Email dan Password tidak boleh kosong!");
+            }
+            else if (user.Login(tbEmail.Text, tbPass.Text))
             {
                 FormDashboard formHomepage = new FormDashboard();
                 formHomepage.Show();

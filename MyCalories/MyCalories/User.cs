@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Npgsql;
 
 namespace MyCalories
 {
@@ -19,9 +20,15 @@ namespace MyCalories
         private float _height;
         private float _weight;
         private string _healthStatus;
+        private string _roles;
+
+
+        // Connection variables
+        private NpgsqlCommand cmd;
+        private NpgsqlDataReader rd;
 
         //Constructor
-        
+
         public User() { }
 
         public User(string _email, string _password)
@@ -81,19 +88,43 @@ namespace MyCalories
             set { _healthStatus = value; }
         }
 
+        public string Roles
+        {
+            get { return _roles; }
+            set { _roles = value; }
+        }
+
+
         //Method ------------------
 
         public bool Login(string Email, string Password)
         {
-            if (Email == "admin@gmail.com" && Password == "admin")
+            try
             {
-                return true;
+                NpgsqlConnection login = new Connection().GetConnection();
+                login.Open();
+                cmd = new NpgsqlCommand("select name, roles from users where email='" + Email + "' and password='" + Password + "'");
+                cmd.Connection = login;
+                cmd.ExecuteNonQuery();
+                rd = cmd.ExecuteReader();
+
+                if (rd.HasRows && rd.Read())
+                {
+                    this.Name = rd.GetString(0);
+                    this.Roles = rd.GetString(1);
+                    
+
+                    return true;
+                }
+                else return false; 
             }
-            else
+            catch (Exception ex)
             {
                 return false;
             }
+
         }
+
         public float CalculateBMI()
         {
             float BMI = 0;
