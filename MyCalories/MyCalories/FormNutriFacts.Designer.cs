@@ -69,7 +69,7 @@
             this.Controls.Add(this.label3);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormNutriFacts";
             this.Text = "FormNutriFacts";
             this.Load += new System.EventHandler(this.FormNutriFacts_Load);
