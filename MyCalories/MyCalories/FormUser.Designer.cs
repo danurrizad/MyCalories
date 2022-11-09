@@ -6,7 +6,7 @@
         private DataGridView dgvData;
         private Panel panelForm;
         private Button button2;
-        private Button button1;
+        private Button btnAddUser;
         private Panel pnlRoles;
         private TextBox tbRoles;
         private Label label8;

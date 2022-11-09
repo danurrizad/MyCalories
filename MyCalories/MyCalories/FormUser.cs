@@ -23,7 +23,7 @@ namespace MyCalories
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.panelForm = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddUser = new System.Windows.Forms.Button();
             this.pnlRoles = new System.Windows.Forms.Panel();
             this.tbRoles = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -75,7 +75,10 @@ namespace MyCalories
             this.dgvData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvData.Location = new System.Drawing.Point(48, 86);
             this.dgvData.Name = "dgvData";
             this.dgvData.RowTemplate.Height = 25;
@@ -88,7 +91,7 @@ namespace MyCalories
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelForm.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelForm.Controls.Add(this.button2);
-            this.panelForm.Controls.Add(this.button1);
+            this.panelForm.Controls.Add(this.btnAddUser);
             this.panelForm.Controls.Add(this.pnlRoles);
             this.panelForm.Controls.Add(this.pnlHealthStatus);
             this.panelForm.Controls.Add(this.pnlWeight);
@@ -111,20 +114,22 @@ namespace MyCalories
             this.button2.TabIndex = 22;
             this.button2.Text = "Clear";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnAddUser
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Chocolate;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(26, 520);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(241, 37);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAddUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddUser.BackColor = System.Drawing.Color.Chocolate;
+            this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAddUser.Location = new System.Drawing.Point(26, 520);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(266, 37);
+            this.btnAddUser.TabIndex = 16;
+            this.btnAddUser.Text = "Add";
+            this.btnAddUser.UseVisualStyleBackColor = false;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // pnlRoles
             // 
@@ -368,6 +373,7 @@ namespace MyCalories
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormUser";
+            this.Load += new System.EventHandler(this.FormUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.panelForm.ResumeLayout(false);
             this.panelForm.PerformLayout();
@@ -388,6 +394,69 @@ namespace MyCalories
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void Display()
+        {
+            GetData.ShowData("select * from users", dgvData);
+        }
+
+        public void Clear()
+        {
+            tbAge.Text = tbGender.Text = tbHealthStatus.Text = tbHeight.Text = tbNama.Text = tbRoles.Text = "";
+        }
+
+        private void FormUser_Load(object sender, EventArgs e)
+        {
+            Display();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            User newUser;
+            if (tbAge.Text == "" ||
+                tbGender.Text == "" ||
+                tbHealthStatus.Text == "" ||
+                tbHeight.Text == "" ||
+                tbNama.Text == "" ||
+                tbRoles.Text == "" ||
+                tbWeight.Text == "")
+            {
+                MessageBox.Show("Fill out the blank textbox!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Clear();
+            }
+            else if (btnAddUser.Text == "Add")
+            {
+                try
+                {
+                    int id = int.Parse(dgvData.Rows[dgvData.Rows.Count - 2].Cells[0].Value.ToString());
+                    id++;
+
+                    newUser = new User(id, 
+                        tbNama.Text, 
+                        "default@gmail.com", 
+                        "default123", 
+                        int.Parse(tbAge.Text), 
+                        tbGender.Text, 
+                        double.Parse(tbHeight.Text), 
+                        double.Parse(tbWeight.Text), 
+                        tbHealthStatus.Text, 
+                        tbRoles.Text);
+
+                    newUser.AddUser(newUser);
+                    Clear();
+                    Display();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

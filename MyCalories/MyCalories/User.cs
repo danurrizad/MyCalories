@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using System.Data;
+using NpgsqlTypes;
 
 namespace MyCalories
 {
@@ -31,10 +33,18 @@ namespace MyCalories
 
         public User() { }
 
-        public User(string _email, string _password)
+        public User(int id, string fullName, string email, string password, int age, string gender, double height, double weight, string healthStatus, string roles)
         {
-            Email = _email;
-            Password = _password;
+            this._id = id;
+            this._fullName = fullName;
+            this._email = email;
+            this._password = password;
+            this._age = age;
+            this._gender = gender;
+            this._height = height;
+            this._weight = weight;
+            this._healthStatus = healthStatus;
+            this._roles = roles;
         }
         //Properties ------------------
         public int ID
@@ -145,9 +155,52 @@ namespace MyCalories
 
         }
 
-        public void AddUser()
+        public void AddUser(User newUser)
         {
+            NpgsqlConnection conn = new Connection().GetConnection();
+            conn.Open();
 
+            string query = "insert into users values (@id_user, @name, @age, @gender, @height, @weight, @health_status, @roles, @email, @password)";
+            string check = "select * from users where id_user='" + newUser.ID + "'";
+
+            NpgsqlCommand checking = new NpgsqlCommand(check, conn);
+            checking.ExecuteNonQuery();
+            rd = checking.ExecuteReader();
+
+            if(rd.HasRows && rd.Read() && rd[0].ToString() == newUser.ID.ToString())
+            {
+                MessageBox.Show("ID '" + newUser.ID + "' already exist!");
+                rd.Close();
+            }
+            else
+            {
+                rd.Close();
+                try
+                {
+                    cmd = new NpgsqlCommand(query, conn);
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.Parameters.Add("@id_user", NpgsqlDbType.Integer).Value = newUser.ID;
+                    cmd.Parameters.Add("@name", NpgsqlDbType.Varchar).Value = newUser.Name;
+                    cmd.Parameters.Add("@age", NpgsqlDbType.Integer).Value = newUser.Age;
+                    cmd.Parameters.Add("@gender", NpgsqlDbType.Varchar).Value = newUser.Gender;
+                    cmd.Parameters.Add("@height", NpgsqlDbType.Double).Value = newUser.Height;
+                    cmd.Parameters.Add("@weight", NpgsqlDbType.Double).Value = newUser.Weight;
+                    cmd.Parameters.Add("@health_status", NpgsqlDbType.Varchar).Value = newUser.HealthStatus;
+                    cmd.Parameters.Add("@roles", NpgsqlDbType.Varchar).Value = newUser.Roles;
+                    cmd.Parameters.Add("@email", NpgsqlDbType.Varchar).Value = newUser.Email;
+                    cmd.Parameters.Add("@password", NpgsqlDbType.Varchar).Value = newUser.Password;
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Added successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            conn.Close();
         }
 
         public void EditUser()
