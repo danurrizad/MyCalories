@@ -64,7 +64,7 @@ namespace MyCalories
             }
             else if (user.Login(tbEmail.Text, tbPass.Text))
             {
-                FormDashboard formHomepage = new FormDashboard();
+                FormDashboard formHomepage = new FormDashboard(user);
                 formHomepage.Show();
                 this.Hide();
             }
@@ -73,6 +73,11 @@ namespace MyCalories
                 MessageBox.Show("Email atau password yang anda masukkan salah");
             }
 
+        }
+
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
