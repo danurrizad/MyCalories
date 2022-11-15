@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Npgsql;
 using System.Data;
 using NpgsqlTypes;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace MyCalories
 {
@@ -26,14 +27,14 @@ namespace MyCalories
 
 
         // Connection variables
-        private NpgsqlCommand cmd;
-        private NpgsqlDataReader rd;
+        private static NpgsqlCommand cmd;
+        private static NpgsqlDataReader rd;
 
         //Constructor
 
         public User() { }
 
-        public User(int id, string fullName, string email, string password, int age, string gender, double height, double weight, string healthStatus, string roles)
+        public User(int id, string fullName, int age, string gender, double height, double weight, string healthStatus, string roles, string email="admin@gmail.com", string password = "abcABC123!")
         {
             this._id = id;
             this._fullName = fullName;
@@ -138,6 +139,9 @@ namespace MyCalories
         public double CalculateBMI()
         {
             double BMI = 0;
+
+            BMI = this.Weight / Math.Pow((this.Height * 0.01), 2);
+
             return BMI;
         }
 
@@ -145,8 +149,7 @@ namespace MyCalories
         {
             double BMR = 0;
 
-            // Rumus BMR berdasarkan Harris-Benedict
-            if(this.Gender == "male")
+            if (this.Gender == "male")
                 BMR = 88.362 + (13.397 * this.Weight) + (4.799 * this.Height) - (5.677 * this.Age);
             else
                 BMR = 88.362 + (13.397 * this.Weight) + (4.799 * this.Height) - (5.677 * this.Age);
@@ -196,21 +199,78 @@ namespace MyCalories
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 
             conn.Close();
         }
 
-        public void EditUser()
+        public void EditUser(User user, int id)
         {
+            NpgsqlConnection conn = new Connection().GetConnection();
+            conn.Open();
 
+            string query = "update users set " +
+                "name = @name, " +
+                "age = @age, " +
+                "gender = @gender, " +
+                "height = @height, " +
+                "weight = @weight, " +
+                "health_status = @health_status, " +
+                "roles = @roles, " +
+                "email = @email, " +
+                "password = @password " +
+                "where id_user = @id_user";
+
+            cmd = new NpgsqlCommand(query, conn);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add("@id_user", NpgsqlDbType.Integer).Value = user.ID;
+            cmd.Parameters.Add("@name", NpgsqlDbType.Varchar).Value = user.Name;
+            cmd.Parameters.Add("@age", NpgsqlDbType.Integer).Value = user.Age;
+            cmd.Parameters.Add("@gender", NpgsqlDbType.Varchar).Value = user.Gender;
+            cmd.Parameters.Add("@height", NpgsqlDbType.Double).Value = user.Height;
+            cmd.Parameters.Add("@weight", NpgsqlDbType.Double).Value = user.Weight;
+            cmd.Parameters.Add("@health_status", NpgsqlDbType.Varchar).Value = user.HealthStatus;
+            cmd.Parameters.Add("@roles", NpgsqlDbType.Varchar).Value = user.Roles;
+            cmd.Parameters.Add("@email", NpgsqlDbType.Varchar).Value = user.Email;
+            cmd.Parameters.Add("@password", NpgsqlDbType.Varchar).Value = user.Password;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            conn.Close();
         }
 
-        public void DeleteUser()
+        public  static void DeleteUser(int id)
         {
+            NpgsqlConnection conn = new Connection().GetConnection();
+            conn.Open();
 
+            string query = "delete from users where id_user = @id_user";
+
+            cmd = new NpgsqlCommand(query, conn);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add("@id_user", NpgsqlDbType.Integer).Value = id;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         public void SearchUser()
