@@ -54,6 +54,8 @@ namespace MyCalories
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.userBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.panelForm.SuspendLayout();
             this.pnlRoles.SuspendLayout();
@@ -409,11 +411,36 @@ namespace MyCalories
             // 
             this.userBindingSource2.DataSource = typeof(MyCalories.User);
             // 
+            // tbSearch
+            // 
+            this.tbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbSearch.Location = new System.Drawing.Point(289, 42);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.PlaceholderText = "Search by name or gender";
+            this.tbSearch.Size = new System.Drawing.Size(286, 23);
+            this.tbSearch.TabIndex = 23;
+            this.tbSearch.WordWrap = false;
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Location = new System.Drawing.Point(203, 43);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(81, 17);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Search Here";
+            // 
             // FormUser
             // 
             this.BackgroundImage = global::MyCalories.Properties.Resources.image_2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1030, 604);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.lblTitle2);
@@ -594,11 +621,15 @@ namespace MyCalories
                     {
                         MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    //Cashier.DeleteCashier(dgvCashier.Rows[e.RowIndex].Cells[2].Value.ToString());
                     Clear();
                     Display();
                 }
             }
+        }
+
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            User.SearchUser(tbSearch.Text, this.dgvData);
         }
     }
 }

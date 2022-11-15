@@ -8,6 +8,7 @@ using Npgsql;
 using System.Data;
 using NpgsqlTypes;
 using Microsoft.VisualBasic.ApplicationServices;
+using System.Collections;
 
 namespace MyCalories
 {
@@ -250,7 +251,7 @@ namespace MyCalories
             conn.Close();
         }
 
-        public  static void DeleteUser(int id)
+        public static void DeleteUser(int id)
         {
             NpgsqlConnection conn = new Connection().GetConnection();
             conn.Open();
@@ -273,9 +274,10 @@ namespace MyCalories
             }
         }
 
-        public void SearchUser()
+        public static void SearchUser(string query, DataGridView dgvData)
         {
-
+            GetData.ShowData("select * FROM users where lower(name) LIKE lower('%" + query + "%') " +
+                "OR lower(gender) LIKE lower('%" + query + "%') ", dgvData);
         }
     }
 }
