@@ -24,8 +24,15 @@ namespace MyCalories
             cmd = new NpgsqlCommand(query, conn);
             da = new NpgsqlDataAdapter(cmd);
             dt = new DataTable();
-            da.Fill(dt);
-            dgv.DataSource = dt;
+            try
+            {
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             conn.Close();
         }

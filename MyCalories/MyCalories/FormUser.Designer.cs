@@ -33,5 +33,7 @@
         private BindingSource userBindingSource2;
         private ComboBox cbHealthStatus;
         private ComboBox cbRoles;
+        private TextBox tbSearch;
+        private Label label9;
     }
 }
