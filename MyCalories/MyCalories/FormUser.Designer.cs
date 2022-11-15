@@ -8,10 +8,8 @@
         private Button button2;
         private Button btnAddUser;
         private Panel pnlRoles;
-        private TextBox tbRoles;
         private Label label8;
         private Panel pnlHealthStatus;
-        private TextBox tbHealthStatus;
         private Label label7;
         private Panel pnlWeight;
         private TextBox tbWeight;
@@ -20,7 +18,6 @@
         private TextBox tbHeight;
         private Label label5;
         private Panel pnlGender;
-        private TextBox tbGender;
         private Label label4;
         private Panel pnlAge;
         private TextBox tbAge;
@@ -29,5 +26,12 @@
         private Panel pnlNama;
         private TextBox tbNama;
         private Label label2;
+        private BindingSource userBindingSource;
+        private System.ComponentModel.IContainer components;
+        private BindingSource userBindingSource1;
+        private ComboBox cbGender;
+        private BindingSource userBindingSource2;
+        private ComboBox cbHealthStatus;
+        private ComboBox cbRoles;
     }
 }

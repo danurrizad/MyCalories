@@ -12,6 +12,10 @@ namespace MyCalories
 {
     public partial class FormUser : Form
     {
+        private DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn();
+        private DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
+        private int selected_id;
+
         public FormUser()
         {
             InitializeComponent();
@@ -19,16 +23,17 @@ namespace MyCalories
 
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTitle2 = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.panelForm = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.pnlRoles = new System.Windows.Forms.Panel();
-            this.tbRoles = new System.Windows.Forms.TextBox();
+            this.cbRoles = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pnlHealthStatus = new System.Windows.Forms.Panel();
-            this.tbHealthStatus = new System.Windows.Forms.TextBox();
+            this.cbHealthStatus = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlWeight = new System.Windows.Forms.Panel();
             this.tbWeight = new System.Windows.Forms.TextBox();
@@ -37,7 +42,7 @@ namespace MyCalories
             this.tbHeight = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlGender = new System.Windows.Forms.Panel();
-            this.tbGender = new System.Windows.Forms.TextBox();
+            this.cbGender = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pnlAge = new System.Windows.Forms.Panel();
             this.tbAge = new System.Windows.Forms.TextBox();
@@ -46,6 +51,9 @@ namespace MyCalories
             this.pnlNama = new System.Windows.Forms.Panel();
             this.tbNama = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.userBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.panelForm.SuspendLayout();
             this.pnlRoles.SuspendLayout();
@@ -55,6 +63,9 @@ namespace MyCalories
             this.pnlGender.SuspendLayout();
             this.pnlAge.SuspendLayout();
             this.pnlNama.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle2
@@ -72,18 +83,19 @@ namespace MyCalories
             // 
             // dgvData
             // 
-            this.dgvData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvData.AllowUserToAddRows = false;
+            this.dgvData.AllowUserToDeleteRows = false;
             this.dgvData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvData.Location = new System.Drawing.Point(48, 86);
             this.dgvData.Name = "dgvData";
+            this.dgvData.ReadOnly = true;
             this.dgvData.RowTemplate.Height = 25;
             this.dgvData.Size = new System.Drawing.Size(527, 466);
             this.dgvData.TabIndex = 10;
+            this.dgvData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellClick);
             // 
             // panelForm
             // 
@@ -104,6 +116,7 @@ namespace MyCalories
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(415, 639);
             this.panelForm.TabIndex = 11;
+            this.panelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelForm_Paint);
             // 
             // button2
             // 
@@ -134,22 +147,27 @@ namespace MyCalories
             // pnlRoles
             // 
             this.pnlRoles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlRoles.Controls.Add(this.tbRoles);
+            this.pnlRoles.Controls.Add(this.cbRoles);
             this.pnlRoles.Controls.Add(this.label8);
             this.pnlRoles.Location = new System.Drawing.Point(26, 428);
             this.pnlRoles.Name = "pnlRoles";
             this.pnlRoles.Size = new System.Drawing.Size(352, 45);
             this.pnlRoles.TabIndex = 21;
             // 
-            // tbRoles
+            // cbRoles
             // 
-            this.tbRoles.BackColor = System.Drawing.SystemColors.Control;
-            this.tbRoles.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbRoles.Location = new System.Drawing.Point(0, 18);
-            this.tbRoles.Multiline = true;
-            this.tbRoles.Name = "tbRoles";
-            this.tbRoles.Size = new System.Drawing.Size(352, 27);
-            this.tbRoles.TabIndex = 13;
+            this.cbRoles.BackColor = System.Drawing.SystemColors.Control;
+            this.cbRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbRoles.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.cbRoles.FormattingEnabled = true;
+            this.cbRoles.Items.AddRange(new object[] {
+            "Admin",
+            "User"});
+            this.cbRoles.Location = new System.Drawing.Point(0, 22);
+            this.cbRoles.Name = "cbRoles";
+            this.cbRoles.Size = new System.Drawing.Size(352, 23);
+            this.cbRoles.TabIndex = 18;
             // 
             // label8
             // 
@@ -165,22 +183,28 @@ namespace MyCalories
             // pnlHealthStatus
             // 
             this.pnlHealthStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlHealthStatus.Controls.Add(this.tbHealthStatus);
+            this.pnlHealthStatus.Controls.Add(this.cbHealthStatus);
             this.pnlHealthStatus.Controls.Add(this.label7);
             this.pnlHealthStatus.Location = new System.Drawing.Point(26, 377);
             this.pnlHealthStatus.Name = "pnlHealthStatus";
             this.pnlHealthStatus.Size = new System.Drawing.Size(352, 45);
             this.pnlHealthStatus.TabIndex = 20;
             // 
-            // tbHealthStatus
+            // cbHealthStatus
             // 
-            this.tbHealthStatus.BackColor = System.Drawing.SystemColors.Control;
-            this.tbHealthStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbHealthStatus.Location = new System.Drawing.Point(0, 18);
-            this.tbHealthStatus.Multiline = true;
-            this.tbHealthStatus.Name = "tbHealthStatus";
-            this.tbHealthStatus.Size = new System.Drawing.Size(352, 27);
-            this.tbHealthStatus.TabIndex = 13;
+            this.cbHealthStatus.BackColor = System.Drawing.SystemColors.Control;
+            this.cbHealthStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbHealthStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbHealthStatus.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cbHealthStatus.FormattingEnabled = true;
+            this.cbHealthStatus.Items.AddRange(new object[] {
+            "Excellent",
+            "Average",
+            "Poor"});
+            this.cbHealthStatus.Location = new System.Drawing.Point(0, 22);
+            this.cbHealthStatus.Name = "cbHealthStatus";
+            this.cbHealthStatus.Size = new System.Drawing.Size(352, 23);
+            this.cbHealthStatus.TabIndex = 17;
             // 
             // label7
             // 
@@ -207,9 +231,11 @@ namespace MyCalories
             // 
             this.tbWeight.BackColor = System.Drawing.SystemColors.Control;
             this.tbWeight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbWeight.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbWeight.Location = new System.Drawing.Point(0, 18);
             this.tbWeight.Multiline = true;
             this.tbWeight.Name = "tbWeight";
+            this.tbWeight.PlaceholderText = "Input your height in (kg)";
             this.tbWeight.Size = new System.Drawing.Size(352, 27);
             this.tbWeight.TabIndex = 13;
             // 
@@ -241,6 +267,7 @@ namespace MyCalories
             this.tbHeight.Location = new System.Drawing.Point(0, 18);
             this.tbHeight.Multiline = true;
             this.tbHeight.Name = "tbHeight";
+            this.tbHeight.PlaceholderText = "Input your height in (cm)";
             this.tbHeight.Size = new System.Drawing.Size(352, 27);
             this.tbHeight.TabIndex = 13;
             // 
@@ -258,22 +285,28 @@ namespace MyCalories
             // pnlGender
             // 
             this.pnlGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlGender.Controls.Add(this.tbGender);
+            this.pnlGender.Controls.Add(this.cbGender);
             this.pnlGender.Controls.Add(this.label4);
             this.pnlGender.Location = new System.Drawing.Point(26, 224);
             this.pnlGender.Name = "pnlGender";
             this.pnlGender.Size = new System.Drawing.Size(352, 45);
             this.pnlGender.TabIndex = 17;
             // 
-            // tbGender
+            // cbGender
             // 
-            this.tbGender.BackColor = System.Drawing.SystemColors.Control;
-            this.tbGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbGender.Location = new System.Drawing.Point(0, 18);
-            this.tbGender.Multiline = true;
-            this.tbGender.Name = "tbGender";
-            this.tbGender.Size = new System.Drawing.Size(352, 27);
-            this.tbGender.TabIndex = 13;
+            this.cbGender.BackColor = System.Drawing.SystemColors.Control;
+            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbGender.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "Female",
+            "Male"});
+            this.cbGender.Location = new System.Drawing.Point(0, 22);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(352, 23);
+            this.cbGender.Sorted = true;
+            this.cbGender.TabIndex = 16;
             // 
             // label4
             // 
@@ -303,6 +336,7 @@ namespace MyCalories
             this.tbAge.Location = new System.Drawing.Point(0, 18);
             this.tbAge.Multiline = true;
             this.tbAge.Name = "tbAge";
+            this.tbAge.PlaceholderText = "Input your age here";
             this.tbAge.Size = new System.Drawing.Size(352, 27);
             this.tbAge.TabIndex = 13;
             // 
@@ -348,6 +382,7 @@ namespace MyCalories
             this.tbNama.Location = new System.Drawing.Point(0, 18);
             this.tbNama.Multiline = true;
             this.tbNama.Name = "tbNama";
+            this.tbNama.PlaceholderText = "Input your name here";
             this.tbNama.Size = new System.Drawing.Size(352, 27);
             this.tbNama.TabIndex = 13;
             // 
@@ -361,6 +396,18 @@ namespace MyCalories
             this.label2.Size = new System.Drawing.Size(39, 15);
             this.label2.TabIndex = 15;
             this.label2.Text = "Nama";
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(MyCalories.User);
+            // 
+            // userBindingSource1
+            // 
+            this.userBindingSource1.DataSource = typeof(MyCalories.User);
+            // 
+            // userBindingSource2
+            // 
+            this.userBindingSource2.DataSource = typeof(MyCalories.User);
             // 
             // FormUser
             // 
@@ -391,19 +438,47 @@ namespace MyCalories
             this.pnlAge.PerformLayout();
             this.pnlNama.ResumeLayout(false);
             this.pnlNama.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+        private void GenerateButton()
+        {
+            
+            this.btnUpdate.HeaderText = "Update";
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseColumnTextForButtonValue = true;
+
+            this.btnDelete.HeaderText = "Delete";
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseColumnTextForButtonValue = true;
+
+            dgvData.Columns.Add(btnUpdate);
+            dgvData.Columns.Add(btnDelete);
+        }
+
         private void Display()
         {
+            ClearDGV();
             GetData.ShowData("select * from users", dgvData);
+            GenerateButton();
         }
 
         public void Clear()
         {
-            tbAge.Text = tbGender.Text = tbHealthStatus.Text = tbHeight.Text = tbNama.Text = tbRoles.Text = "";
+            tbAge.Text = cbGender.Text = cbHealthStatus.Text = tbWeight.Text = tbHeight.Text = tbNama.Text = cbRoles.Text = "";
+            btnAddUser.Text = "Add";
+        }
+
+        public void ClearDGV()
+        {
+            this.dgvData.Columns.Clear();
         }
 
         private void FormUser_Load(object sender, EventArgs e)
@@ -419,13 +494,14 @@ namespace MyCalories
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             User newUser;
+
             if (tbAge.Text == "" ||
-                tbGender.Text == "" ||
-                tbHealthStatus.Text == "" ||
+                cbGender.Text == "" ||
+                cbHealthStatus.Text == "" ||
                 tbHeight.Text == "" ||
+                tbWeight.Text == "" ||
                 tbNama.Text == "" ||
-                tbRoles.Text == "" ||
-                tbWeight.Text == "")
+                cbRoles.Text == "")
             {
                 MessageBox.Show("Fill out the blank textbox!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Clear();
@@ -434,19 +510,17 @@ namespace MyCalories
             {
                 try
                 {
-                    int id = int.Parse(dgvData.Rows[dgvData.Rows.Count - 2].Cells[0].Value.ToString());
-                    id++;
+                    int id = int.Parse(dgvData.Rows[dgvData.Rows.Count - 1].Cells[0].Value.ToString());
+                    id = id + 1;
 
-                    newUser = new User(id, 
-                        tbNama.Text, 
-                        "default@gmail.com", 
-                        "default123", 
-                        int.Parse(tbAge.Text), 
-                        tbGender.Text, 
-                        double.Parse(tbHeight.Text), 
-                        double.Parse(tbWeight.Text), 
-                        tbHealthStatus.Text, 
-                        tbRoles.Text);
+                    newUser = new User(id,
+                        tbNama.Text,
+                        int.Parse(tbAge.Text),
+                        cbGender.Text,
+                        double.Parse(tbHeight.Text),
+                        double.Parse(tbWeight.Text),
+                        cbHealthStatus.Text,
+                        cbRoles.Text);
 
                     newUser.AddUser(newUser);
                     Clear();
@@ -455,6 +529,74 @@ namespace MyCalories
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                }
+            }
+            else if (btnAddUser.Text == "Update")
+            {
+                try
+                {
+                    int id = this.selected_id;
+
+                    newUser = new User(id,
+                        tbNama.Text,
+                        int.Parse(tbAge.Text),
+                        cbGender.Text,
+                        double.Parse(tbHeight.Text),
+                        double.Parse(tbWeight.Text),
+                        cbHealthStatus.Text,
+                        cbRoles.Text);
+
+                    newUser.EditUser(newUser, id);
+                    Clear();
+                    Display();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void panelForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 10)
+            {
+                btnAddUser.Text = "Update";
+                this.selected_id = int.Parse(dgvData.Rows[e.RowIndex].Cells[0].Value.ToString());
+                tbNama.Text = dgvData.Rows[e.RowIndex].Cells[1].Value.ToString();
+                tbAge.Text = dgvData.Rows[e.RowIndex].Cells[2].Value.ToString();
+                cbGender.Text = dgvData.Rows[e.RowIndex].Cells[3].Value.ToString();
+                tbHeight.Text = dgvData.Rows[e.RowIndex].Cells[4].Value.ToString();
+                tbWeight.Text = dgvData.Rows[e.RowIndex].Cells[5].Value.ToString();
+                cbHealthStatus.Text = dgvData.Rows[e.RowIndex].Cells[6].Value.ToString();
+                cbRoles.Text = dgvData.Rows[e.RowIndex].Cells[7].Value.ToString();
+
+                tbNama.Focus();
+            }
+            else if (e.ColumnIndex == 11)
+            {
+                int deleted_id = int.Parse(dgvData.Rows[e.RowIndex].Cells[0].Value.ToString());
+                string deleted_name = dgvData.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                if (MessageBox.Show($"Are you want to delete {deleted_name} ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        User.DeleteUser(deleted_id);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    //Cashier.DeleteCashier(dgvCashier.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    Clear();
+                    Display();
                 }
             }
         }
