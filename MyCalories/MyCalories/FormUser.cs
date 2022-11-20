@@ -19,6 +19,7 @@ namespace MyCalories
         public FormUser()
         {
             InitializeComponent();
+            Display();
         }
 
         private void InitializeComponent()
@@ -90,6 +91,7 @@ namespace MyCalories
             this.dgvData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -599,37 +601,54 @@ namespace MyCalories
 
         private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 10)
-            {
-                btnAddUser.Text = "Update";
-                this.selected_id = int.Parse(dgvData.Rows[e.RowIndex].Cells[0].Value.ToString());
-                tbNama.Text = dgvData.Rows[e.RowIndex].Cells[1].Value.ToString();
-                tbAge.Text = dgvData.Rows[e.RowIndex].Cells[2].Value.ToString();
-                cbGender.Text = dgvData.Rows[e.RowIndex].Cells[3].Value.ToString();
-                tbHeight.Text = dgvData.Rows[e.RowIndex].Cells[4].Value.ToString();
-                tbWeight.Text = dgvData.Rows[e.RowIndex].Cells[5].Value.ToString();
-                cbHealthStatus.Text = dgvData.Rows[e.RowIndex].Cells[6].Value.ToString();
-                cbRoles.Text = dgvData.Rows[e.RowIndex].Cells[7].Value.ToString();
+            //MessageBox.Show(e.ColumnIndex.ToString());
+            //MessageBox.Show(dgvData.Rows[e.RowIndex].Cells[2].Value.ToString());
 
-                tbNama.Focus();
-            }
-            else if (e.ColumnIndex == 11)
+            if (e.ColumnIndex == dgvData.ColumnCount - 2)
             {
-                int deleted_id = int.Parse(dgvData.Rows[e.RowIndex].Cells[0].Value.ToString());
-                string deleted_name = dgvData.Rows[e.RowIndex].Cells[1].Value.ToString();
-
-                if (MessageBox.Show($"Are you want to delete {deleted_name} ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                try
                 {
-                    try
+                    btnAddUser.Text = "Update";
+                    this.selected_id = int.Parse(dgvData.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    tbNama.Text = dgvData.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    tbAge.Text = dgvData.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    cbGender.Text = dgvData.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    tbHeight.Text = dgvData.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    tbWeight.Text = dgvData.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    cbHealthStatus.Text = dgvData.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    cbRoles.Text = dgvData.Rows[e.RowIndex].Cells[7].Value.ToString();
+
+                    tbNama.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else if (e.ColumnIndex == dgvData.ColumnCount - 1)
+            {
+                try
+                {
+                    int deleted_id = int.Parse(dgvData.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    string deleted_name = dgvData.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                    if (MessageBox.Show($"Are you want to delete {deleted_name} ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {
-                        User.DeleteUser(deleted_id);
+                        try
+                        {
+                            User.DeleteUser(deleted_id);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        Clear();
+                        Display();
                     }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    Clear();
-                    Display();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
