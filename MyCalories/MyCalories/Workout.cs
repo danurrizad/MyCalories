@@ -133,7 +133,7 @@ namespace MyCalories
                 "description = @description, " +
                 "burned_calories = @burned_calories, " +
                 "duration = @duration, " +
-                "type = @type" +
+                "type = @type " +
                 "where id_workout = @id_workout";
 
             cmd = new NpgsqlCommand(query, conn);
@@ -160,7 +160,7 @@ namespace MyCalories
             conn.Close();
         }
 
-        public void DeleteWorkout(int id)
+        public static void DeleteWorkout(int id)
         {
             NpgsqlConnection conn = new Connection().GetConnection();
             conn.Open();
@@ -183,7 +183,7 @@ namespace MyCalories
             }
         }
 
-        public void SearchWorkout(string query, DataGridView dgvData)
+        public static void SearchWorkout(string query, DataGridView dgvData)
         {
             GetData.ShowData("select * FROM workout where lower(name) LIKE lower('%" + query + "%') " +
                 "OR lower(description) LIKE lower('%" + query + "%') ", dgvData);
