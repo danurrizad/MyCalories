@@ -544,10 +544,19 @@ namespace MyCalories
             }
             else if (btnAddUser.Text == "Add")
             {
+                int id = 0;
+
                 try
                 {
-                    int id = int.Parse(dgvData.Rows[dgvData.Rows.Count - 1].Cells[0].Value.ToString());
-                    id = id + 1;
+                    if (dgvData.RowCount != 0)
+                    {
+                        id = int.Parse(dgvData.Rows[dgvData.Rows.Count - 1].Cells[0].Value.ToString());
+                        id = id + 1;
+                    }
+                    else
+                    {
+                        id = 1;
+                    }
 
                     newUser = new User(id,
                         tbNama.Text,
