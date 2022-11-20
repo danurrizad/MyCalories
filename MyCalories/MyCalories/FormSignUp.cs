@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace MyCalories
 {
-    public partial class FormFoodEnConv : Form
+    public partial class FormSignUp : Form
     {
-        public FormFoodEnConv()
+        public FormSignUp()
         {
             InitializeComponent();
+        }
+
+        private void panelTbEmail_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

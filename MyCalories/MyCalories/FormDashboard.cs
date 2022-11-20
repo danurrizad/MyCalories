@@ -25,7 +25,7 @@ namespace MyCalories
             btnDailyRecords.FlatAppearance.MouseDownBackColor = btnDailyRecords.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnBMI.FlatAppearance.MouseDownBackColor = btnBMI.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnBMR.FlatAppearance.MouseDownBackColor = btnBMR.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            btnFoodEnConv.FlatAppearance.MouseDownBackColor = btnFoodEnConv.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnExercise.FlatAppearance.MouseDownBackColor = btnExercise.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnNutriFact.FlatAppearance.MouseDownBackColor =  btnNutriFact.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnLogout.FlatAppearance.MouseDownBackColor = btnLogout.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnLogo.FlatAppearance.MouseDownBackColor = btnLogo.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -45,7 +45,7 @@ namespace MyCalories
 
         private void ClearButtonColor()
         {
-            panelDailyRecords.BackColor = panelBMI.BackColor = panelBMR.BackColor = panelFoodEnConv.BackColor = panelNutriFact.BackColor = panelUser.BackColor = Color.Transparent;
+            panelDailyRecords.BackColor = panelBMI.BackColor = panelBMR.BackColor = panelExercise.BackColor = panelNutriFact.BackColor = panelUser.BackColor = Color.Transparent;
         }
 
 
@@ -112,7 +112,7 @@ namespace MyCalories
 
             //Menampilkan FormBMR
             this.pnlFormLoader.Controls.Clear();
-            FormBMR formBMR = new FormBMR() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormBMR formBMR = new FormBMR(this.user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formBMR.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(formBMR);
             formBMR.Show();
@@ -126,19 +126,7 @@ namespace MyCalories
         //--------------------------------------------------------Button Food Energy Converter----------------------------------------------------------------------
         private void btnFoodEnConv_Click_1(object sender, EventArgs e)
         {
-            //Backcolor Button Lain Menjadi Transparan
-            ClearButtonColor();
-            panelFoodEnConv.BackColor = Color.FromArgb(156, 156, 156);
 
-            //Menampilkan FormFoodEnConv
-            this.pnlFormLoader.Controls.Clear();
-            FormFoodEnConv formFoodEnConv = new FormFoodEnConv() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            formFoodEnConv.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(formFoodEnConv);
-            formFoodEnConv.Show();
-
-            //Mengubah Judul Form
-            this.Text = "Food Energy Converter";
         }
 
         //--------------------------------------------------------Button Nutricion Facts List----------------------------------------------------------------------
@@ -206,6 +194,26 @@ namespace MyCalories
             Application.Exit();
         }
 
+        private void panelExercise_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void btnExercise_Click(object sender, EventArgs e)
+        {
+            //Backcolor Button Lain Menjadi Transparan
+            ClearButtonColor();
+            panelExercise.BackColor = Color.FromArgb(156, 156, 156);
+
+            //Menampilkan FormFoodEnConv
+            this.pnlFormLoader.Controls.Clear();
+            FormExercise formExercise = new FormExercise() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formExercise.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(formExercise);
+            formExercise.Show();
+
+            //Mengubah Judul Form
+            this.Text = "Exercise List";
+        }
     }
 }

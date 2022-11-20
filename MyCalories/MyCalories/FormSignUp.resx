@@ -57,9 +57,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblDesc.Text" xml:space="preserve">
-    <value>The Basal Metabolic Rate (BMR) Calculator estimates your basal metabolic rate—the amount of energy expended 
-while at rest in a neutrally temperate environment, and in a post-absorptive state 
-(meaning that the digestive system is inactive, which requires about 12 hours of fasting).</value>
-  </data>
 </root>

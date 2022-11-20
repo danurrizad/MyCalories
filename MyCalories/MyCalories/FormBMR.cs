@@ -12,14 +12,21 @@ namespace MyCalories
 {
     public partial class FormBMR : Form
     {
-        public FormBMR()
+        User user;
+        public FormBMR(User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void FormBMR_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormBMR_Load_1(object sender, EventArgs e)
+        {
+            lblBMR.Text = user.CalculateBMR().ToString("0.##");
         }
     }
 }
