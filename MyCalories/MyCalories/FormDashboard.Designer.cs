@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelFoodEnConv = new System.Windows.Forms.Panel();
+            this.panelExercise = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.btnFoodEnConv = new System.Windows.Forms.Button();
+            this.btnExercise = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panelUser = new System.Windows.Forms.Panel();
             this.btnUsers = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@
             this.lblNamaUser = new System.Windows.Forms.Label();
             this.pnlFormLoader = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panelFoodEnConv.SuspendLayout();
+            this.panelExercise.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panelUser.SuspendLayout();
@@ -73,7 +73,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.panelFoodEnConv);
+            this.panel1.Controls.Add(this.panelExercise);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.panelUser);
             this.panel1.Controls.Add(this.btnLogo);
@@ -89,15 +89,16 @@
             this.panel1.Size = new System.Drawing.Size(258, 614);
             this.panel1.TabIndex = 0;
             // 
-            // panelFoodEnConv
+            // panelExercise
             // 
-            this.panelFoodEnConv.Controls.Add(this.pictureBox4);
-            this.panelFoodEnConv.Controls.Add(this.btnFoodEnConv);
-            this.panelFoodEnConv.Location = new System.Drawing.Point(17, 365);
-            this.panelFoodEnConv.Margin = new System.Windows.Forms.Padding(2);
-            this.panelFoodEnConv.Name = "panelFoodEnConv";
-            this.panelFoodEnConv.Size = new System.Drawing.Size(225, 40);
-            this.panelFoodEnConv.TabIndex = 21;
+            this.panelExercise.Controls.Add(this.pictureBox4);
+            this.panelExercise.Controls.Add(this.btnExercise);
+            this.panelExercise.Location = new System.Drawing.Point(17, 365);
+            this.panelExercise.Margin = new System.Windows.Forms.Padding(2);
+            this.panelExercise.Name = "panelExercise";
+            this.panelExercise.Size = new System.Drawing.Size(225, 40);
+            this.panelExercise.TabIndex = 21;
+            this.panelExercise.Paint += new System.Windows.Forms.PaintEventHandler(this.panelExercise_Paint);
             // 
             // pictureBox4
             // 
@@ -111,23 +112,23 @@
             this.pictureBox4.TabIndex = 20;
             this.pictureBox4.TabStop = false;
             // 
-            // btnFoodEnConv
+            // btnExercise
             // 
-            this.btnFoodEnConv.BackColor = System.Drawing.Color.Transparent;
-            this.btnFoodEnConv.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFoodEnConv.FlatAppearance.BorderSize = 0;
-            this.btnFoodEnConv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFoodEnConv.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFoodEnConv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFoodEnConv.Location = new System.Drawing.Point(52, 2);
-            this.btnFoodEnConv.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFoodEnConv.Name = "btnFoodEnConv";
-            this.btnFoodEnConv.Size = new System.Drawing.Size(171, 36);
-            this.btnFoodEnConv.TabIndex = 7;
-            this.btnFoodEnConv.Text = "Food to Energy";
-            this.btnFoodEnConv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFoodEnConv.UseVisualStyleBackColor = false;
-            this.btnFoodEnConv.Click += new System.EventHandler(this.btnFoodEnConv_Click_1);
+            this.btnExercise.BackColor = System.Drawing.Color.Transparent;
+            this.btnExercise.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExercise.FlatAppearance.BorderSize = 0;
+            this.btnExercise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExercise.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnExercise.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExercise.Location = new System.Drawing.Point(52, 2);
+            this.btnExercise.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExercise.Name = "btnExercise";
+            this.btnExercise.Size = new System.Drawing.Size(171, 36);
+            this.btnExercise.TabIndex = 7;
+            this.btnExercise.Text = "Exercise List";
+            this.btnExercise.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExercise.UseVisualStyleBackColor = false;
+            this.btnExercise.Click += new System.EventHandler(this.btnExercise_Click);
             // 
             // pictureBox7
             // 
@@ -420,7 +421,7 @@
             this.Load += new System.EventHandler(this.FormHomepage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelFoodEnConv.ResumeLayout(false);
+            this.panelExercise.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panelUser.ResumeLayout(false);
@@ -459,9 +460,9 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private Panel panelFoodEnConv;
+        private Panel panelExercise;
         private PictureBox pictureBox4;
-        private Button btnFoodEnConv;
+        private Button btnExercise;
         private Button btnUsers;
     }
 }
