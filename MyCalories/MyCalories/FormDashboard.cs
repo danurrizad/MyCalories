@@ -15,6 +15,7 @@ namespace MyCalories
 {
     public partial class FormDashboard : Form
     {
+        User user;
   
         public FormDashboard(User user)
         {
@@ -31,6 +32,7 @@ namespace MyCalories
             btnUsers.FlatAppearance.MouseDownBackColor = btnUsers.FlatAppearance.MouseOverBackColor = Color.Transparent;
 
             lblNamaUser.Text = "Hello " + user.Name + "\nas " + user.Roles;
+            this.user = user;
         }
         private void FormHomepage_Load(object sender, EventArgs e)
         {
@@ -89,7 +91,7 @@ namespace MyCalories
 
             //Menampilkan FormBMI
             this.pnlFormLoader.Controls.Clear();
-            FormBMI formBMI = new FormBMI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormBMI formBMI = new FormBMI(this.user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formBMI.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(formBMI);
             formBMI.Show();

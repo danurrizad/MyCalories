@@ -179,6 +179,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(318, 26);
             this.tbEmail.TabIndex = 7;
+            this.tbEmail.Text = "admin@gmail.com";
             // 
             // btnLogin
             // 
@@ -304,6 +305,7 @@
             this.tbPass.Name = "tbPass";
             this.tbPass.Size = new System.Drawing.Size(297, 26);
             this.tbPass.TabIndex = 8;
+            this.tbPass.Text = "abcABC123!";
             this.tbPass.UseSystemPasswordChar = true;
             // 
             // pictureBox4

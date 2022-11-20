@@ -18,7 +18,7 @@ namespace MyCalories
         private int _id;
         private string _fullName;
         private string _email;
-        private string _password;   
+        protected string _password;   
         private int _age;
         private string _gender;
         private double _height;
@@ -52,6 +52,7 @@ namespace MyCalories
         public int ID
         {
             get { return _id; }
+            set { _id = value; }
         }
 
         public string Name
@@ -115,16 +116,24 @@ namespace MyCalories
             {
                 NpgsqlConnection login = new Connection().GetConnection();
                 login.Open();
-                cmd = new NpgsqlCommand("select name, roles from users where email='" + Email + "' and password='" + Password + "'");
+                cmd = new NpgsqlCommand("select * from users where email='" + Email + "' and password='" + Password + "'");
                 cmd.Connection = login;
                 cmd.ExecuteNonQuery();
                 rd = cmd.ExecuteReader();
 
                 if (rd.HasRows && rd.Read())
                 {
-                    this.Name = rd.GetString(0);
-                    this.Roles = rd.GetString(1);
-                    
+
+                    this.ID = rd.GetInt32(0);
+                    this.Name = rd.GetString(1);
+                    this.Age = rd.GetInt32(2);
+                    this.Gender = rd.GetString(3);
+                    this.Height = rd.GetDouble(4);
+                    this.Weight = rd.GetDouble(5);
+                    this.HealthStatus = rd.GetString(6);
+                    this.Roles = rd.GetString(7);
+                    this.Email = rd.GetString(8);
+                    this.Password = rd.GetString(9);
 
                     return true;
                 }
@@ -132,6 +141,7 @@ namespace MyCalories
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return false;
             }
 
