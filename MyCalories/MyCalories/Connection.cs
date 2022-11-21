@@ -12,7 +12,7 @@ namespace MyCalories
     internal class Connection
     {
         private NpgsqlConnection _conn;
-        private string connstring = "Host=localhost;Port=5432;Username=kaloriku;Password=kaloriku12345;Database=dbmycalories";
+        private string connstring = "Host=localhost;Port=5432;Username=postgres;Password=informatikaku;Database=dbMyCalories";
 
         public NpgsqlConnection GetConnection()
         {

@@ -30,12 +30,13 @@ namespace MyCalories
         // Connection variables
         private static NpgsqlCommand cmd;
         private static NpgsqlDataReader rd;
+        private DataGridView r;
 
         //Constructor
 
         public User() { }
 
-        public User(int id, string fullName, int age, string gender, double height, double weight, string healthStatus, string roles, string email="admin@gmail.com", string password = "abcABC123!")
+        public User(int id, string fullName, int age, string gender, double height, double weight, string healthStatus, string roles="user", string email="admin@gmail.com", string password = "abcABC123!")
         {
             this._id = id;
             this._fullName = fullName;
@@ -107,6 +108,8 @@ namespace MyCalories
             set { _roles = value; }
         }
 
+        public bool condition;
+
 
         //Method ------------------
 
@@ -168,6 +171,64 @@ namespace MyCalories
             return BMR;
 
         }
+
+        public void SignUp(string name, int age, string gender, double height, double weight, string health_status, string email, string pass, string konfPass)
+        {
+            condition = false;
+            NpgsqlConnection conn = new Connection().GetConnection();
+            conn.Open();
+
+            string query = "insert into users values (default, @name, @age, @gender, @height, @weight, @health_status, @roles, @email, @password)";
+            string check = "select * from users where email='" + email + "'";
+
+            NpgsqlCommand checking = new NpgsqlCommand(check, conn);
+            checking.ExecuteNonQuery();
+            rd = checking.ExecuteReader();
+
+            if (rd.HasRows && rd.Read() && rd[8].ToString() == email)
+            {
+                MessageBox.Show("Email '" + email + "' already exist!");
+                rd.Close();
+            }
+            else if (pass == konfPass)
+            {
+                rd.Close();
+                try
+                {
+                    cmd = new NpgsqlCommand(query, conn);
+                    cmd.CommandType = CommandType.Text;
+                   
+                    cmd.Parameters.Add("@name", NpgsqlDbType.Varchar).Value = name;
+                    cmd.Parameters.Add("@age", NpgsqlDbType.Integer).Value = age;
+                    cmd.Parameters.Add("@gender", NpgsqlDbType.Varchar).Value = gender;
+                    cmd.Parameters.Add("@height", NpgsqlDbType.Double).Value = height;
+                    cmd.Parameters.Add("@weight", NpgsqlDbType.Double).Value = weight;
+                    cmd.Parameters.Add("@health_status", NpgsqlDbType.Varchar).Value = health_status;
+                    cmd.Parameters.Add("@roles", NpgsqlDbType.Varchar).Value = "User";
+                    cmd.Parameters.Add("@email", NpgsqlDbType.Varchar).Value = email;
+                    cmd.Parameters.Add("@password", NpgsqlDbType.Varchar).Value = pass;
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Sign Up successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    condition = true;
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    condition = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Pastikan password sudah sesuai!");
+            }
+
+            conn.Close();
+        }
+
+
+    
 
         public void AddUser(User newUser)
         {
