@@ -126,7 +126,6 @@ namespace MyCalories
 
                 if (rd.HasRows && rd.Read())
                 {
-
                     this.ID = rd.GetInt32(0);
                     this.Name = rd.GetString(1);
                     this.Age = rd.GetInt32(2);
@@ -166,7 +165,7 @@ namespace MyCalories
             if (this.Gender == "male")
                 BMR = 88.362 + (13.397 * this.Weight) + (4.799 * this.Height) - (5.677 * this.Age);
             else
-                BMR = 88.362 + (13.397 * this.Weight) + (4.799 * this.Height) - (5.677 * this.Age);
+                BMR = 447.593 + (9.247 * this.Weight) + (3.098 * this.Height) - (4.330 * this.Age);
 
             return BMR;
 

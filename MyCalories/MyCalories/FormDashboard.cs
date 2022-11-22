@@ -119,7 +119,6 @@ namespace MyCalories
 
             //Mengubah Judul Form
             this.Text = "Calculate BMR";
-
         }
 
 
@@ -170,18 +169,26 @@ namespace MyCalories
         }
         private void btnUsers_Click_1(object sender, EventArgs e)
         {
-            ClearButtonColor();
-            panelUser.BackColor = Color.FromArgb(156, 156, 156);
+            if(user.Roles.ToLower() == "admin")
+            {
+                ClearButtonColor();
+                panelUser.BackColor = Color.FromArgb(156, 156, 156);
 
-            //Menampilkan FormNutriFacts
-            this.pnlFormLoader.Controls.Clear();
-            FormUser formUser = new FormUser() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            formUser.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(formUser);
-            formUser.Show();
+                //Menampilkan FormNutriFacts
+                this.pnlFormLoader.Controls.Clear();
+                FormUser formUser = new FormUser() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                formUser.FormBorderStyle = FormBorderStyle.None;
+                this.pnlFormLoader.Controls.Add(formUser);
+                formUser.Show();
+               
 
-            //Mengubah Judul Form
-            this.Text = "Users";
+                //Mengubah Judul Form
+                this.Text = "Users";
+            }
+            else
+            {
+                btnUsers.Enabled = false;
+            }
         }
 
         private void panelUser_Paint(object sender, PaintEventArgs e)
