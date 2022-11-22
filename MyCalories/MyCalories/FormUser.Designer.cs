@@ -31,9 +31,9 @@
         private BindingSource userBindingSource1;
         private ComboBox cbGender;
         private BindingSource userBindingSource2;
-        private ComboBox cbHealthStatus;
         private ComboBox cbRoles;
         private TextBox tbSearch;
         private Label label9;
+        private TextBox tbActivities;
     }
 }

@@ -21,7 +21,7 @@ namespace MyCalories
         private double _calories;
         private double _portion;
         private double _carbohydrate;
-        private double _sugar;
+        private double _protein;
         private double _fat;
 
         // Connection variables
@@ -30,7 +30,7 @@ namespace MyCalories
 
         public Food() { }
 
-        public Food(int id, string name, string description, double calories, double portion, double carbohydrate, double sugar, double fat)
+        public Food(int id, string name, string description, double calories, double portion, double carbohydrate, double protein, double fat)
         {
             this._id = id;
             this._name = name;
@@ -38,7 +38,7 @@ namespace MyCalories
             this._calories = calories;
             this._portion = portion;    
             this._carbohydrate = carbohydrate;
-            this._sugar = sugar;
+            this._protein = protein;
             this._fat = fat;
         }
         
@@ -79,10 +79,10 @@ namespace MyCalories
             set { _carbohydrate = value; }
         }
 
-        public double Sugar
+        public double Protein
         {
-            get { return _sugar; }
-            set { _sugar = value; }
+            get { return _protein; }
+            set { _protein = value; }
         }
 
         public double Fat
@@ -92,13 +92,10 @@ namespace MyCalories
         }
 
         // Methods ------------------
-        public Dictionary<string, Food> GetNutritionFacts()
+
+        public static void GetAllFoods(DataGridView dgvData)
         {
-            Dictionary<string, Food> nutritionFacts = new Dictionary<string, Food>();
-
-            // code here
-
-            return nutritionFacts;
+            GetData.ShowData("select * from food", dgvData);
         }
 
         public void AddFood(Food newFood)
@@ -106,9 +103,7 @@ namespace MyCalories
             NpgsqlConnection conn = new Connection().GetConnection();
             conn.Open();
 
-            MessageBox.Show(ID.ToString());
-
-            string query = "insert into food values (@id_food, @name, @description, @calories, @portion, @sugar, @carbohydrate, @fat)";
+            string query = "insert into food values (default, @name, @description, @calories, @portion, @protein, @carbohydrate, @fat)";
             string check = "select * from food where id_food='" + newFood.ID + "'";
 
             NpgsqlCommand checking = new NpgsqlCommand(check, conn);
@@ -128,12 +123,11 @@ namespace MyCalories
                     cmd = new NpgsqlCommand(query, conn);
                     cmd.CommandType = CommandType.Text;
 
-                    cmd.Parameters.Add("@id_food", NpgsqlDbType.Integer).Value = newFood.ID;
                     cmd.Parameters.Add("@name", NpgsqlDbType.Varchar).Value = newFood.Name;
                     cmd.Parameters.Add("@description", NpgsqlDbType.Varchar).Value = newFood.Description;
                     cmd.Parameters.Add("@calories", NpgsqlDbType.Double).Value = newFood.Calories;
                     cmd.Parameters.Add("@portion", NpgsqlDbType.Double).Value = newFood.Portion;
-                    cmd.Parameters.Add("@sugar", NpgsqlDbType.Double).Value = newFood.Sugar;
+                    cmd.Parameters.Add("@protein", NpgsqlDbType.Double).Value = newFood.Protein;
                     cmd.Parameters.Add("@carbohydrate", NpgsqlDbType.Double).Value = newFood.Carbohydrate;
                     cmd.Parameters.Add("@fat", NpgsqlDbType.Double).Value = newFood.Fat;
 
@@ -159,7 +153,7 @@ namespace MyCalories
                 "description = @description, " +
                 "calories = @calories, " +
                 "portion = @portion, " +
-                "sugar = @sugar, " +
+                "protein = @protein, " +
                 "carbohydrate = @carbohydrate, " +
                 "fat = @fat " +
                 "where id_food = @id_food";
@@ -173,7 +167,7 @@ namespace MyCalories
             cmd.Parameters.Add("@description", NpgsqlDbType.Varchar).Value = food.Description;
             cmd.Parameters.Add("@calories", NpgsqlDbType.Double).Value = food.Calories;
             cmd.Parameters.Add("@portion", NpgsqlDbType.Double).Value = food.Portion;
-            cmd.Parameters.Add("@sugar", NpgsqlDbType.Double).Value = food.Sugar;
+            cmd.Parameters.Add("@protein", NpgsqlDbType.Double).Value = food.Protein;
             cmd.Parameters.Add("@carbohydrate", NpgsqlDbType.Double).Value = food.Carbohydrate;
             cmd.Parameters.Add("@fat", NpgsqlDbType.Double).Value = food.Fat;
 

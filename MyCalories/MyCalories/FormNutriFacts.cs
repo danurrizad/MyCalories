@@ -41,7 +41,7 @@ namespace MyCalories
 
         public void Clear()
         {
-            tbCalories.Text = tbCarbohydrate.Text = tbDescription.Text = tbFat.Text = tbNama.Text = tbPortion.Text = tbSearch.Text = tbSugar.Text = "";
+            tbCalories.Text = tbCarbohydrate.Text = tbDescription.Text = tbFat.Text = tbNama.Text = tbPortion.Text = tbSearch.Text = tbProtein.Text = "";
             btnAddFood.Text = "Add";
         }
 
@@ -53,7 +53,7 @@ namespace MyCalories
         private void Display()
         {
             ClearDGV();
-            GetData.ShowData("select * from food", dgvData);
+            Food.GetAllFoods(dgvData);
             GenerateButton();
         }
 
@@ -77,7 +77,7 @@ namespace MyCalories
                 tbFat.Text == "" ||
                 tbNama.Text == "" ||
                 tbPortion.Text == "" ||
-                tbSugar .Text == "")
+                tbProtein .Text == "")
             {
                 MessageBox.Show("Fill out the blank textbox!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Clear();
@@ -105,7 +105,7 @@ namespace MyCalories
                             double.Parse(tbCalories.Text),
                             double.Parse(tbPortion.Text),
                             double.Parse(tbCarbohydrate.Text),
-                            double.Parse(tbSugar.Text),
+                            double.Parse(tbProtein.Text),
                             double.Parse(tbFat.Text)
                             );
 
@@ -131,7 +131,7 @@ namespace MyCalories
                             double.Parse(tbCalories.Text),
                             double.Parse(tbPortion.Text),
                             double.Parse(tbCarbohydrate.Text),
-                            double.Parse(tbSugar.Text),
+                            double.Parse(tbProtein.Text),
                             double.Parse(tbFat.Text)
                             );
 
@@ -164,7 +164,7 @@ namespace MyCalories
                     tbCalories.Text = dgvData.Rows[e.RowIndex].Cells[3].Value.ToString();
                     tbPortion.Text = dgvData.Rows[e.RowIndex].Cells[4].Value.ToString();
                     tbCarbohydrate.Text = dgvData.Rows[e.RowIndex].Cells[5].Value.ToString();
-                    tbSugar.Text = dgvData.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    tbProtein.Text = dgvData.Rows[e.RowIndex].Cells[6].Value.ToString();
                     tbFat.Text = dgvData.Rows[e.RowIndex].Cells[7].Value.ToString();
 
                     tbNama.Focus();

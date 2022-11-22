@@ -37,7 +37,7 @@ namespace MyCalories
         private void FormHomepage_Load(object sender, EventArgs e)
         {
             //Menampilkan FormHome
-            FormHome formHome = new FormHome() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormHome formHome = new FormHome(this.user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formHome.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(formHome);
             formHome.Show();
@@ -54,7 +54,7 @@ namespace MyCalories
         {
             //Menampilkan FormHome
             this.pnlFormLoader.Controls.Clear();
-            FormHome formHome = new FormHome() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormHome formHome = new FormHome(this.user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formHome.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(formHome);
             formHome.Show();

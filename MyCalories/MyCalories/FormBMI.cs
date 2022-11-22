@@ -16,6 +16,8 @@ namespace MyCalories
         {
             lblBMI.Text = user.CalculateBMI().ToString("0.##");
             lblBMICategory.Text = CategorizeBMI();
+            lblAdvice.Text = Advice();
+
         }
 
         private string CategorizeBMI()
@@ -30,7 +32,12 @@ namespace MyCalories
 
         private string Advice()
         {
-            return "";
+            double BMI = user.CalculateBMI();
+
+            if (BMI <= 18.4) return "Increase your weight!";
+            else if (BMI <= 24.9) return "Keep your good works!";
+            else if (BMI <= 39.9) return "Dont worry, but increase your workout frequency and eat healthy foods!";
+            else return "Watch out with your weight sir, obese can lead you to many dangerous illness";
         }
 
     }

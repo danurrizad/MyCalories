@@ -34,7 +34,6 @@ namespace MyCalories
             this.cbRoles = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pnlHealthStatus = new System.Windows.Forms.Panel();
-            this.cbHealthStatus = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlWeight = new System.Windows.Forms.Panel();
             this.tbWeight = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@ namespace MyCalories
             this.userBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.tbActivities = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.panelForm.SuspendLayout();
             this.pnlRoles.SuspendLayout();
@@ -190,28 +190,12 @@ namespace MyCalories
             // pnlHealthStatus
             // 
             this.pnlHealthStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlHealthStatus.Controls.Add(this.cbHealthStatus);
+            this.pnlHealthStatus.Controls.Add(this.tbActivities);
             this.pnlHealthStatus.Controls.Add(this.label7);
             this.pnlHealthStatus.Location = new System.Drawing.Point(26, 377);
             this.pnlHealthStatus.Name = "pnlHealthStatus";
             this.pnlHealthStatus.Size = new System.Drawing.Size(352, 45);
             this.pnlHealthStatus.TabIndex = 20;
-            // 
-            // cbHealthStatus
-            // 
-            this.cbHealthStatus.BackColor = System.Drawing.SystemColors.Control;
-            this.cbHealthStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbHealthStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbHealthStatus.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cbHealthStatus.FormattingEnabled = true;
-            this.cbHealthStatus.Items.AddRange(new object[] {
-            "Excellent",
-            "Average",
-            "Poor"});
-            this.cbHealthStatus.Location = new System.Drawing.Point(0, 22);
-            this.cbHealthStatus.Name = "cbHealthStatus";
-            this.cbHealthStatus.Size = new System.Drawing.Size(352, 23);
-            this.cbHealthStatus.TabIndex = 17;
             // 
             // label7
             // 
@@ -220,9 +204,9 @@ namespace MyCalories
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 15);
+            this.label7.Size = new System.Drawing.Size(55, 15);
             this.label7.TabIndex = 15;
-            this.label7.Text = "Health Status";
+            this.label7.Text = "Activities";
             // 
             // pnlWeight
             // 
@@ -443,6 +427,18 @@ namespace MyCalories
             this.label9.TabIndex = 24;
             this.label9.Text = "Search Here";
             // 
+            // tbActivities
+            // 
+            this.tbActivities.BackColor = System.Drawing.SystemColors.Control;
+            this.tbActivities.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbActivities.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbActivities.Location = new System.Drawing.Point(0, 18);
+            this.tbActivities.Multiline = true;
+            this.tbActivities.Name = "tbActivities";
+            this.tbActivities.PlaceholderText = "How many workout in a week?";
+            this.tbActivities.Size = new System.Drawing.Size(352, 27);
+            this.tbActivities.TabIndex = 16;
+            // 
             // FormUser
             // 
             this.BackgroundImage = global::MyCalories.Properties.Resources.image_2;
@@ -502,13 +498,13 @@ namespace MyCalories
         private void Display()
         {
             ClearDGV();
-            GetData.ShowData("select * from users", dgvData);
+            User.GetAllUsers(dgvData);
             GenerateButton();
         }
 
         public void Clear()
         {
-            tbAge.Text = cbGender.Text = cbHealthStatus.Text = tbWeight.Text = tbHeight.Text = tbNama.Text = cbRoles.Text = "";
+            tbAge.Text = cbGender.Text = tbActivities.Text = tbWeight.Text = tbHeight.Text = tbNama.Text = cbRoles.Text = "";
             btnAddUser.Text = "Add";
         }
 
@@ -533,7 +529,7 @@ namespace MyCalories
 
             if (tbAge.Text == "" ||
                 cbGender.Text == "" ||
-                cbHealthStatus.Text == "" ||
+                tbActivities.Text == "" ||
                 tbHeight.Text == "" ||
                 tbWeight.Text == "" ||
                 tbNama.Text == "" ||
@@ -564,16 +560,17 @@ namespace MyCalories
                         cbGender.Text,
                         double.Parse(tbHeight.Text),
                         double.Parse(tbWeight.Text),
-                        cbHealthStatus.Text,
+                        int.Parse(tbActivities.Text),
                         cbRoles.Text);
 
                     newUser.AddUser(newUser);
+                    MessageBox.Show("Added successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
                     Display();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else if (btnAddUser.Text == "Update")
@@ -588,17 +585,18 @@ namespace MyCalories
                         cbGender.Text,
                         double.Parse(tbHeight.Text),
                         double.Parse(tbWeight.Text),
-                        cbHealthStatus.Text,
+                        int.Parse(tbActivities.Text),
                         cbRoles.Text);
 
                     newUser.EditUser(newUser, id);
+                    MessageBox.Show("Updated successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
                     Display();
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -610,8 +608,6 @@ namespace MyCalories
 
         private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //MessageBox.Show(e.ColumnIndex.ToString());
-            //MessageBox.Show(dgvData.Rows[e.RowIndex].Cells[2].Value.ToString());
 
             if (e.ColumnIndex == dgvData.ColumnCount - 2)
             {
@@ -624,7 +620,7 @@ namespace MyCalories
                     cbGender.Text = dgvData.Rows[e.RowIndex].Cells[3].Value.ToString();
                     tbHeight.Text = dgvData.Rows[e.RowIndex].Cells[4].Value.ToString();
                     tbWeight.Text = dgvData.Rows[e.RowIndex].Cells[5].Value.ToString();
-                    cbHealthStatus.Text = dgvData.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    tbActivities.Text = dgvData.Rows[e.RowIndex].Cells[6].Value.ToString();
                     cbRoles.Text = dgvData.Rows[e.RowIndex].Cells[7].Value.ToString();
 
                     tbNama.Focus();

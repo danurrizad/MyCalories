@@ -35,8 +35,8 @@
             this.pnlCarbohydrate = new System.Windows.Forms.Panel();
             this.tbCarbohydrate = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.pnlSugar = new System.Windows.Forms.Panel();
-            this.tbSugar = new System.Windows.Forms.TextBox();
+            this.pnlProtein = new System.Windows.Forms.Panel();
+            this.tbProtein = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlPortion = new System.Windows.Forms.Panel();
             this.tbPortion = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@
             this.panelForm.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnlCarbohydrate.SuspendLayout();
-            this.pnlSugar.SuspendLayout();
+            this.pnlProtein.SuspendLayout();
             this.pnlPortion.SuspendLayout();
             this.pnlCalories.SuspendLayout();
             this.pnlDescription.SuspendLayout();
@@ -75,7 +75,7 @@
             this.panelForm.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelForm.Controls.Add(this.panel5);
             this.panelForm.Controls.Add(this.pnlCarbohydrate);
-            this.panelForm.Controls.Add(this.pnlSugar);
+            this.panelForm.Controls.Add(this.pnlProtein);
             this.panelForm.Controls.Add(this.pnlPortion);
             this.panelForm.Controls.Add(this.pnlCalories);
             this.panelForm.Controls.Add(this.pnlDescription);
@@ -152,26 +152,26 @@
             this.label10.TabIndex = 15;
             this.label10.Text = "Carbohydrate";
             // 
-            // pnlSugar
+            // pnlProtein
             // 
-            this.pnlSugar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSugar.Controls.Add(this.tbSugar);
-            this.pnlSugar.Controls.Add(this.label7);
-            this.pnlSugar.Location = new System.Drawing.Point(29, 357);
-            this.pnlSugar.Name = "pnlSugar";
-            this.pnlSugar.Size = new System.Drawing.Size(352, 45);
-            this.pnlSugar.TabIndex = 33;
+            this.pnlProtein.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlProtein.Controls.Add(this.tbProtein);
+            this.pnlProtein.Controls.Add(this.label7);
+            this.pnlProtein.Location = new System.Drawing.Point(29, 357);
+            this.pnlProtein.Name = "pnlProtein";
+            this.pnlProtein.Size = new System.Drawing.Size(352, 45);
+            this.pnlProtein.TabIndex = 33;
             // 
-            // tbSugar
+            // tbProtein
             // 
-            this.tbSugar.BackColor = System.Drawing.SystemColors.Control;
-            this.tbSugar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbSugar.Location = new System.Drawing.Point(0, 18);
-            this.tbSugar.Multiline = true;
-            this.tbSugar.Name = "tbSugar";
-            this.tbSugar.PlaceholderText = "How many sugar does this food have?";
-            this.tbSugar.Size = new System.Drawing.Size(352, 27);
-            this.tbSugar.TabIndex = 13;
+            this.tbProtein.BackColor = System.Drawing.SystemColors.Control;
+            this.tbProtein.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbProtein.Location = new System.Drawing.Point(0, 18);
+            this.tbProtein.Multiline = true;
+            this.tbProtein.Name = "tbProtein";
+            this.tbProtein.PlaceholderText = "How many protein does this food have?";
+            this.tbProtein.Size = new System.Drawing.Size(352, 27);
+            this.tbProtein.TabIndex = 13;
             // 
             // label7
             // 
@@ -180,9 +180,9 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 15);
+            this.label7.Size = new System.Drawing.Size(45, 15);
             this.label7.TabIndex = 15;
-            this.label7.Text = "Sugar";
+            this.label7.Text = "Protein";
             // 
             // pnlPortion
             // 
@@ -201,7 +201,7 @@
             this.tbPortion.Location = new System.Drawing.Point(0, 18);
             this.tbPortion.Multiline = true;
             this.tbPortion.Name = "tbPortion";
-            this.tbPortion.PlaceholderText = "How many portion for that calories";
+            this.tbPortion.PlaceholderText = "How many portion for that calories (in gram)";
             this.tbPortion.Size = new System.Drawing.Size(352, 27);
             this.tbPortion.TabIndex = 13;
             // 
@@ -437,8 +437,8 @@
             this.panel5.PerformLayout();
             this.pnlCarbohydrate.ResumeLayout(false);
             this.pnlCarbohydrate.PerformLayout();
-            this.pnlSugar.ResumeLayout(false);
-            this.pnlSugar.PerformLayout();
+            this.pnlProtein.ResumeLayout(false);
+            this.pnlProtein.PerformLayout();
             this.pnlPortion.ResumeLayout(false);
             this.pnlPortion.PerformLayout();
             this.pnlCalories.ResumeLayout(false);
@@ -469,8 +469,8 @@
         private Panel pnlCarbohydrate;
         private TextBox tbCarbohydrate;
         private Label label10;
-        private Panel pnlSugar;
-        private TextBox tbSugar;
+        private Panel pnlProtein;
+        private TextBox tbProtein;
         private Label label7;
         private Panel pnlPortion;
         private TextBox tbPortion;
