@@ -78,30 +78,28 @@
             this.panelRegister.Controls.Add(this.label1);
             this.panelRegister.Controls.Add(this.label2);
             this.panelRegister.Controls.Add(this.panelTbPass);
-            this.panelRegister.Location = new System.Drawing.Point(-5, -1);
-            this.panelRegister.Margin = new System.Windows.Forms.Padding(2);
+            this.panelRegister.Location = new System.Drawing.Point(-7, -2);
             this.panelRegister.Name = "panelRegister";
-            this.panelRegister.Size = new System.Drawing.Size(510, 634);
+            this.panelRegister.Size = new System.Drawing.Size(729, 1057);
             this.panelRegister.TabIndex = 0;
+            this.panelRegister.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRegister_Paint);
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel3.Location = new System.Drawing.Point(102, 310);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(146, 517);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(15, 41);
+            this.panel3.Size = new System.Drawing.Size(21, 68);
             this.panel3.TabIndex = 23;
             // 
             // panelPass
             // 
             this.panelPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
             this.panelPass.Controls.Add(this.pictureBox3);
-            this.panelPass.Location = new System.Drawing.Point(57, 310);
-            this.panelPass.Margin = new System.Windows.Forms.Padding(2);
+            this.panelPass.Location = new System.Drawing.Point(81, 517);
             this.panelPass.Name = "panelPass";
-            this.panelPass.Size = new System.Drawing.Size(60, 41);
+            this.panelPass.Size = new System.Drawing.Size(86, 68);
             this.panelPass.TabIndex = 24;
             // 
             // pictureBox3
@@ -109,22 +107,20 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(13, 11);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Location = new System.Drawing.Point(19, 18);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 19);
+            this.pictureBox3.Size = new System.Drawing.Size(29, 32);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.Location = new System.Drawing.Point(102, 239);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(146, 398);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(15, 41);
+            this.panel1.Size = new System.Drawing.Size(21, 68);
             this.panel1.TabIndex = 20;
             // 
             // btnDaftarSkrg
@@ -136,10 +132,9 @@
             this.btnDaftarSkrg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDaftarSkrg.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDaftarSkrg.ForeColor = System.Drawing.Color.Blue;
-            this.btnDaftarSkrg.Location = new System.Drawing.Point(192, 513);
-            this.btnDaftarSkrg.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDaftarSkrg.Location = new System.Drawing.Point(274, 855);
             this.btnDaftarSkrg.Name = "btnDaftarSkrg";
-            this.btnDaftarSkrg.Size = new System.Drawing.Size(120, 25);
+            this.btnDaftarSkrg.Size = new System.Drawing.Size(171, 42);
             this.btnDaftarSkrg.TabIndex = 19;
             this.btnDaftarSkrg.Text = "Daftar Sekarang";
             this.btnDaftarSkrg.UseVisualStyleBackColor = false;
@@ -151,10 +146,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(194, 500);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(277, 833);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 13);
+            this.label3.Size = new System.Drawing.Size(176, 23);
             this.label3.TabIndex = 18;
             this.label3.Text = "Belum memiliki akun?";
             // 
@@ -163,21 +157,21 @@
             this.panelTbEmail.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelTbEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panelTbEmail.Controls.Add(this.tbEmail);
-            this.panelTbEmail.Location = new System.Drawing.Point(102, 239);
+            this.panelTbEmail.Location = new System.Drawing.Point(146, 398);
+            this.panelTbEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelTbEmail.Name = "panelTbEmail";
-            this.panelTbEmail.Size = new System.Drawing.Size(349, 41);
+            this.panelTbEmail.Size = new System.Drawing.Size(499, 68);
             this.panelTbEmail.TabIndex = 22;
             // 
             // tbEmail
             // 
-            this.tbEmail.BackColor = System.Drawing.Color.White;
+            this.tbEmail.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbEmail.Location = new System.Drawing.Point(19, 7);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEmail.Location = new System.Drawing.Point(27, 12);
             this.tbEmail.MaxLength = 50;
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(318, 26);
+            this.tbEmail.Size = new System.Drawing.Size(454, 38);
             this.tbEmail.TabIndex = 7;
             this.tbEmail.Text = "kaloriku@gmail.com";
             // 
@@ -187,10 +181,9 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(157, 448);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogin.Location = new System.Drawing.Point(224, 747);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(190, 41);
+            this.btnLogin.Size = new System.Drawing.Size(271, 68);
             this.btnLogin.TabIndex = 17;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -200,20 +193,18 @@
             // 
             this.panelEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
             this.panelEmail.Controls.Add(this.pictureBox1);
-            this.panelEmail.Location = new System.Drawing.Point(57, 239);
-            this.panelEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.panelEmail.Location = new System.Drawing.Point(81, 398);
             this.panelEmail.Name = "panelEmail";
-            this.panelEmail.Size = new System.Drawing.Size(60, 41);
+            this.panelEmail.Size = new System.Drawing.Size(86, 68);
             this.panelEmail.TabIndex = 21;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 18);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 20);
+            this.pictureBox1.Size = new System.Drawing.Size(37, 33);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -224,10 +215,9 @@
             this.lblPass.BackColor = System.Drawing.Color.Transparent;
             this.lblPass.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblPass.ForeColor = System.Drawing.Color.Black;
-            this.lblPass.Location = new System.Drawing.Point(57, 291);
-            this.lblPass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPass.Location = new System.Drawing.Point(81, 485);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(64, 17);
+            this.lblPass.Size = new System.Drawing.Size(93, 28);
             this.lblPass.TabIndex = 14;
             this.lblPass.Text = "Password";
             // 
@@ -237,10 +227,9 @@
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblEmail.Location = new System.Drawing.Point(57, 220);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmail.Location = new System.Drawing.Point(81, 367);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(39, 17);
+            this.lblEmail.Size = new System.Drawing.Size(59, 28);
             this.lblEmail.TabIndex = 12;
             this.lblEmail.Text = "Email";
             // 
@@ -249,10 +238,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(196, 83);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(280, 138);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 25);
+            this.label1.Size = new System.Drawing.Size(174, 40);
             this.label1.TabIndex = 10;
             this.label1.Text = "Welcome to";
             // 
@@ -262,10 +250,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 36.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(111, 99);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(159, 165);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(285, 66);
+            this.label2.Size = new System.Drawing.Size(428, 99);
             this.label2.TabIndex = 11;
             this.label2.Text = "MyCalories";
             // 
@@ -276,19 +263,19 @@
             this.panelTbPass.Controls.Add(this.pictureBox2);
             this.panelTbPass.Controls.Add(this.tbPass);
             this.panelTbPass.Controls.Add(this.pictureBox4);
-            this.panelTbPass.Location = new System.Drawing.Point(102, 310);
+            this.panelTbPass.Location = new System.Drawing.Point(146, 517);
+            this.panelTbPass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelTbPass.Name = "panelTbPass";
-            this.panelTbPass.Size = new System.Drawing.Size(349, 41);
+            this.panelTbPass.Size = new System.Drawing.Size(499, 68);
             this.panelTbPass.TabIndex = 25;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::MyCalories.Properties.Resources.visibility;
-            this.pictureBox2.Location = new System.Drawing.Point(320, 13);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(457, 22);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 16);
+            this.pictureBox2.Size = new System.Drawing.Size(30, 27);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
@@ -296,14 +283,13 @@
             // 
             // tbPass
             // 
-            this.tbPass.BackColor = System.Drawing.Color.White;
+            this.tbPass.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPass.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbPass.Location = new System.Drawing.Point(19, 8);
-            this.tbPass.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPass.Location = new System.Drawing.Point(27, 13);
             this.tbPass.MaxLength = 50;
             this.tbPass.Name = "tbPass";
-            this.tbPass.Size = new System.Drawing.Size(297, 26);
+            this.tbPass.Size = new System.Drawing.Size(424, 38);
             this.tbPass.TabIndex = 8;
             this.tbPass.Text = "kaloriku12345";
             this.tbPass.UseSystemPasswordChar = true;
@@ -312,10 +298,9 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::MyCalories.Properties.Resources.visibleslash;
-            this.pictureBox4.Location = new System.Drawing.Point(320, 13);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Location = new System.Drawing.Point(457, 22);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 15);
+            this.pictureBox4.Size = new System.Drawing.Size(29, 25);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 26;
             this.pictureBox4.TabStop = false;
@@ -323,13 +308,12 @@
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(500, 630);
+            this.ClientSize = new System.Drawing.Size(714, 1050);
             this.Controls.Add(this.panelRegister);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Page";
