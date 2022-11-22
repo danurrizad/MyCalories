@@ -30,8 +30,8 @@ namespace MyCalories
 
         private void btnDaftarSkrg_Click(object sender, EventArgs e)
         {
-            FormRegister formRegister = new FormRegister();
-            formRegister.Show();
+            FormSignUp formSignUp = new FormSignUp();
+            formSignUp.Show();
             this.Hide();
         }
 
@@ -78,6 +78,16 @@ namespace MyCalories
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void panelRegister_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelTbPass_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
