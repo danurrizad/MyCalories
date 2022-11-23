@@ -37,7 +37,7 @@ namespace MyCalories
         private void FormHomepage_Load(object sender, EventArgs e)
         {
             //Menampilkan FormHome
-            FormHome formHome = new FormHome() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormHome formHome = new FormHome(this.user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formHome.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(formHome);
             formHome.Show();
@@ -54,7 +54,7 @@ namespace MyCalories
         {
             //Menampilkan FormHome
             this.pnlFormLoader.Controls.Clear();
-            FormHome formHome = new FormHome() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormHome formHome = new FormHome(this.user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formHome.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(formHome);
             formHome.Show();
@@ -131,6 +131,7 @@ namespace MyCalories
         //--------------------------------------------------------Button Nutricion Facts List----------------------------------------------------------------------
         private void btnNutriFact_Click(object sender, EventArgs e)
         {
+
             //Backcolor Button Lain Menjadi Transparan
             ClearButtonColor();
             panelNutriFact.BackColor = Color.FromArgb(156, 156, 156);
@@ -144,6 +145,7 @@ namespace MyCalories
 
             //Mengubah Judul Form
             this.Text = "Nutricion Facts";
+
         }
 
 
@@ -207,7 +209,8 @@ namespace MyCalories
         }
 
         private void btnExercise_Click(object sender, EventArgs e)
-        {
+        { 
+
             //Backcolor Button Lain Menjadi Transparan
             ClearButtonColor();
             panelExercise.BackColor = Color.FromArgb(156, 156, 156);
@@ -221,6 +224,7 @@ namespace MyCalories
 
             //Mengubah Judul Form
             this.Text = "Exercise List";
+
         }
     }
 }

@@ -53,7 +53,7 @@ namespace MyCalories
         private void Display()
         {
             ClearDGV();
-            GetData.ShowData("select * from workout", dgvData);
+            Workout.GetAllWorkouts(dgvData);
             GenerateButton();
         }
 

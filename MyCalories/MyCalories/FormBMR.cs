@@ -26,7 +26,29 @@ namespace MyCalories
 
         private void FormBMR_Load_1(object sender, EventArgs e)
         {
-            lblBMR.Text = user.CalculateBMR().ToString("0.##");
+            if(user.Gender.ToLower() == "male")
+            {
+                MaleUser male = new MaleUser
+                {
+                    Weight = user.Weight,
+                    Height = user.Height,
+                    Age = user.Age,
+                    Activities = user.Activities
+                };
+                lblBMR.Text = male.CalculateBMR().ToString("0.##");
+            }
+            else if(user.Gender.ToLower() == "female")
+            {
+                FemaleUser female = new FemaleUser
+                {
+                    Weight = user.Weight,
+                    Height = user.Height,
+                    Age = user.Age,
+                    Activities = user.Activities
+                };
+                lblBMR.Text = female.CalculateBMR().ToString("0.##"); ;
+            }
+
         }
     }
 }

@@ -79,12 +79,17 @@ namespace MyCalories
 
         // Methods ------------------
 
+        public static void GetAllWorkouts(DataGridView dgvData)
+        {
+            GetData.ShowData("select * from workout", dgvData);
+        }
+
         public void AddWorkout(Workout newWorkout)
         {
             NpgsqlConnection conn = new Connection().GetConnection();
             conn.Open();
 
-            string query = "insert into workout values (@id_workout, @name, @description, @burned_calories, @duration, @type)";
+            string query = "insert into workout values (default, @name, @description, @burned_calories, @duration, @type)";
             string check = "select * from workout where id_workout='" + newWorkout.ID + "'";
 
             NpgsqlCommand checking = new NpgsqlCommand(check, conn);
@@ -104,7 +109,6 @@ namespace MyCalories
                     cmd = new NpgsqlCommand(query, conn);
                     cmd.CommandType = CommandType.Text;
 
-                    cmd.Parameters.Add("@id_workout", NpgsqlDbType.Integer).Value = newWorkout.ID;
                     cmd.Parameters.Add("@name", NpgsqlDbType.Varchar).Value = newWorkout.Name;
                     cmd.Parameters.Add("@description", NpgsqlDbType.Varchar).Value = newWorkout.Description;
                     cmd.Parameters.Add("@burned_calories", NpgsqlDbType.Double).Value = newWorkout.BurnedCalories;

@@ -190,7 +190,7 @@
             this.btnLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogo.FlatAppearance.BorderSize = 0;
             this.btnLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogo.Image = global::MyCalories.Properties.Resources.logo1;
+            this.btnLogo.Image = global::MyCalories.Properties.Resources.nutricion;
             this.btnLogo.Location = new System.Drawing.Point(17, 13);
             this.btnLogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogo.Name = "btnLogo";

@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBMI));
             this.lblTitle2 = new System.Windows.Forms.Label();
             this.lblBMI = new System.Windows.Forms.Label();
             this.lblBMICategory = new System.Windows.Forms.Label();
             this.lblAdvice = new System.Windows.Forms.Label();
             this.pnlData = new System.Windows.Forms.Panel();
+            this.lblDesc = new System.Windows.Forms.Label();
             this.pnlData.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,16 +54,15 @@
             // lblBMI
             // 
             this.lblBMI.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblBMI.AutoSize = true;
             this.lblBMI.BackColor = System.Drawing.Color.Transparent;
             this.lblBMI.Font = new System.Drawing.Font("Segoe UI", 128.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblBMI.ForeColor = System.Drawing.Color.Chocolate;
-            this.lblBMI.Location = new System.Drawing.Point(215, 93);
+            this.lblBMI.Location = new System.Drawing.Point(0, 106);
             this.lblBMI.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBMI.Name = "lblBMI";
-            this.lblBMI.Size = new System.Drawing.Size(533, 227);
+            this.lblBMI.Size = new System.Drawing.Size(952, 227);
             this.lblBMI.TabIndex = 8;
-            this.lblBMI.Text = "20.29";
+            this.lblBMI.Text = "20.2";
             this.lblBMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblBMICategory
@@ -70,7 +71,7 @@
             this.lblBMICategory.BackColor = System.Drawing.Color.Transparent;
             this.lblBMICategory.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblBMICategory.ForeColor = System.Drawing.Color.LightSalmon;
-            this.lblBMICategory.Location = new System.Drawing.Point(373, 72);
+            this.lblBMICategory.Location = new System.Drawing.Point(366, 106);
             this.lblBMICategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBMICategory.Name = "lblBMICategory";
             this.lblBMICategory.Size = new System.Drawing.Size(214, 47);
@@ -81,14 +82,13 @@
             // lblAdvice
             // 
             this.lblAdvice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAdvice.AutoSize = true;
             this.lblAdvice.BackColor = System.Drawing.Color.Transparent;
             this.lblAdvice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAdvice.ForeColor = System.Drawing.Color.Black;
-            this.lblAdvice.Location = new System.Drawing.Point(419, 340);
+            this.lblAdvice.Location = new System.Drawing.Point(0, 333);
             this.lblAdvice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAdvice.Name = "lblAdvice";
-            this.lblAdvice.Size = new System.Drawing.Size(121, 25);
+            this.lblAdvice.Size = new System.Drawing.Size(952, 57);
             this.lblAdvice.TabIndex = 26;
             this.lblAdvice.Text = "Lorem ipsum";
             this.lblAdvice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -99,6 +99,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlData.BackColor = System.Drawing.Color.White;
+            this.pnlData.Controls.Add(this.lblDesc);
             this.pnlData.Controls.Add(this.lblAdvice);
             this.pnlData.Controls.Add(this.lblBMICategory);
             this.pnlData.Controls.Add(this.lblBMI);
@@ -106,6 +107,17 @@
             this.pnlData.Name = "pnlData";
             this.pnlData.Size = new System.Drawing.Size(952, 428);
             this.pnlData.TabIndex = 7;
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblDesc.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDesc.Location = new System.Drawing.Point(78, 46);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(804, 60);
+            this.lblDesc.TabIndex = 30;
+            this.lblDesc.Text = resources.GetString("lblDesc.Text");
+            this.lblDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormBMI
             // 
@@ -124,7 +136,6 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormBMI_Load);
             this.pnlData.ResumeLayout(false);
-            this.pnlData.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,5 +147,6 @@
         private Label lblBMICategory;
         private Label lblAdvice;
         private Panel pnlData;
+        private Label lblDesc;
     }
 }

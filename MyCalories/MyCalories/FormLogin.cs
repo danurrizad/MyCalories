@@ -60,7 +60,7 @@ namespace MyCalories
             User user = new User();
             if (tbEmail.Text == "" || tbPass.Text == "")
             {
-                MessageBox.Show("Email dan Password tidak boleh kosong!");
+                MessageBox.Show("Email dan Password tidak boleh kosong!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (user.Login(tbEmail.Text, tbPass.Text))
             {
@@ -70,7 +70,7 @@ namespace MyCalories
             }
             else 
             {
-                MessageBox.Show("Email atau password yang anda masukkan salah");
+                MessageBox.Show("Email dan Password yang anda masukkan salah", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
