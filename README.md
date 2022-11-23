@@ -24,9 +24,13 @@ Anggota 2: Saddan Syah Akbar (20/460566/TK/51155)<br>
 - Pilih configuration manager menjadi release
 - Build -> Build Solution
 - Folder hasil build ada pada direktori bin/Release
-### Localhost Database Setup
+### Config Database
 - Buka PgAdmin4
 - Buat roles baru dengan username: kaloriku dan password: kaloriku12345
-- Buka PSQL Tool pada PgAdmin4, lalu tulis command /i <path sqlnya>
-- Contoh : /i C:\Users\legion\Desktop\Junior Project\Release\backup.sql
+- Pastikan role kaloriku memiliki properties Privileges dengan ketentuan :
+	- Can login? (Centang)
+	- Superuser? (Centang)
+- Buat database dengan nama : dbmycalories
+- Buka PSQL Tool pada database dbmycalories, lalu tulis command \i <path sqlnya>
+- Contoh : \i C:/Users/legion/Desktop/Junior Project/Release/backup.sql
 - Jalankan program!
