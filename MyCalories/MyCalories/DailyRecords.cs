@@ -187,7 +187,7 @@ namespace MyCalories
             string sql = "select id_calories_flow, users.id_user, users.name, food.id_food, food.name, food.calories, workout.id_workout, workout.name, workout.burned_calories, datetime from calories_flow " +
                 "left join users on calories_flow.id_user = users.id_user " +
                 "left join food on calories_flow.id_food = food.id_food " +
-                $"left join workout on calories_flow.id_workout = workout.id_workout where datetime='{DateTime.UtcNow.Date}'";
+                $"left join workout on calories_flow.id_workout = workout.id_workout";
             GetData.ShowData(sql, dgvData);
         }
 
