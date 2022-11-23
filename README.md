@@ -19,7 +19,12 @@ Anggota 2: Saddan Syah Akbar (20/460566/TK/51155)<br>
 ## ERD 
 ![ERD_MyCalories](https://user-images.githubusercontent.com/79238162/192665838-d67b1c0d-c65f-4c26-89c2-a09e78301cf8.jpeg)
 
-## Cara setup database MyCalories
+## Cara setup MyCalories
+### Build Solution
+- Pilih configuration manager menjadi release
+- Build -> Build Solution
+- Folder hasil build ada pada direktori bin/Release
+### Localhost Database Setup
 - Buka PgAdmin4
 - Buat roles baru dengan username: kaloriku dan password: kaloriku12345
 - Buka PSQL Tool pada PgAdmin4, lalu tulis command /i <path sqlnya>
