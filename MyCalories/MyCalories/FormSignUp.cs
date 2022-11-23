@@ -95,82 +95,82 @@ namespace MyCalories
                 if (string.IsNullOrEmpty(tbAge.Text))
                 {
                     lblYO.Focus();
-                    errorProvider1.SetError(lblYO, "Please Enter Age");
+                    errorProvider2.SetError(lblYO, "Please Enter Age");
                 }
                 else
                 {
-                    errorProvider1.Clear();
+                    errorProvider2.Clear();
                 }
 
                 if (string.IsNullOrEmpty(lbGender.Text))
                 {
 
                     lbGender.Focus();
-                    errorProvider1.SetError(lbGender, "Please Enter Gender");
+                    errorProvider3.SetError(lbGender, "Please Choose Your Gender");
                 }
                 else
                 {
-                    errorProvider1.Clear();
+                    errorProvider3.Clear();
                 }
 
                 if (string.IsNullOrEmpty(tbHeight.Text))
                 {
                     lblCM.Focus();
-                    errorProvider1.SetError(lblCM, "Please Enter Height");
+                    errorProvider4.SetError(lblCM, "Please Enter Height");
                 }
                 else
                 {
-                    errorProvider1.Clear();
+                    errorProvider4.Clear();
                 }
 
                 if (string.IsNullOrEmpty(tbWeight.Text))
                 {
                     lblKG.Focus();
-                    errorProvider1.SetError(lblKG, "Please Enter Weight");
+                    errorProvider5.SetError(lblKG, "Please Enter Weight");
                 }
                 else
                 {
-                    errorProvider1.Clear();
+                    errorProvider5.Clear();
                 }
 
                 if (string.IsNullOrEmpty(tbActivities.Text))
                 {
                     tbActivities.Focus();
-                    errorProvider1.SetError(tbActivities, "Please Enter Activity");
+                    errorProvider6.SetError(tbActivities, "Please Enter Activity");
                 }
                 else
                 {
-                    errorProvider1.Clear();
+                    errorProvider6.Clear();
                 }
 
                 if (string.IsNullOrEmpty(tbEmail.Text))
                 {
                     tbEmail.Focus();
-                    errorProvider1.SetError(tbEmail, "Please Enter Email");
+                    errorProvider7.SetError(tbEmail, "Please Enter Email");
                 }
                 else
                 {
-                    errorProvider1.Clear();
+                    errorProvider7.Clear();
                 }
 
                 if (string.IsNullOrEmpty(tbPass.Text))
                 {
                     tbPass.Focus();
-                    errorProvider1.SetError(tbPass, "Please Enter Password");
+                    errorProvider8.SetError(tbPass, "Please Enter Password");
                 }
                 else
                 {
-                    errorProvider1.Clear();
+                    errorProvider8.Clear();
                 }
 
                 if (string.IsNullOrEmpty(tbKonfPass.Text))
                 {
                     tbKonfPass.Focus();
-                    errorProvider1.SetError(tbKonfPass, "Please Re-enter Password");
+                    errorProvider9.SetError(tbKonfPass, "Please Re-enter Password");
                 }
                 else
                 {
-                    errorProvider1.Clear();
+                    errorProvider9.Clear();
                 }
             }
 
@@ -189,6 +189,12 @@ namespace MyCalories
                     MessageBox.Show("Sign Up failed");
                 }
             }
+        }
+
+        private void FormSignUp_Load(object sender, EventArgs e)
+        {
+            btnLoginSkrg.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnLoginSkrg.FlatAppearance.MouseOverBackColor = Color.Transparent;
         }
     }
 }

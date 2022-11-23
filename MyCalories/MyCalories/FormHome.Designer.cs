@@ -80,11 +80,10 @@
             this.panelGoals.Controls.Add(this.label2);
             this.panelGoals.Controls.Add(this.label1);
             this.panelGoals.Controls.Add(this.lblGoalsRemain);
-            this.panelGoals.Location = new System.Drawing.Point(99, 292);
-            this.panelGoals.Margin = new System.Windows.Forms.Padding(2);
-            this.panelGoals.MaximumSize = new System.Drawing.Size(651, 460);
+            this.panelGoals.Location = new System.Drawing.Point(141, 487);
+            this.panelGoals.MaximumSize = new System.Drawing.Size(930, 767);
             this.panelGoals.Name = "panelGoals";
-            this.panelGoals.Size = new System.Drawing.Size(338, 299);
+            this.panelGoals.Size = new System.Drawing.Size(483, 498);
             this.panelGoals.TabIndex = 14;
             // 
             // lblGoals
@@ -96,10 +95,9 @@
             this.lblGoals.BackColor = System.Drawing.Color.Transparent;
             this.lblGoals.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblGoals.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(116)))), ((int)(((byte)(37)))));
-            this.lblGoals.Location = new System.Drawing.Point(70, 185);
-            this.lblGoals.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGoals.Location = new System.Drawing.Point(100, 308);
             this.lblGoals.Name = "lblGoals";
-            this.lblGoals.Size = new System.Drawing.Size(46, 21);
+            this.lblGoals.Size = new System.Drawing.Size(70, 32);
             this.lblGoals.TabIndex = 15;
             this.lblGoals.Text = "1892";
             // 
@@ -111,10 +109,9 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(17, 185);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Location = new System.Drawing.Point(24, 308);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(56, 21);
+            this.label20.Size = new System.Drawing.Size(84, 32);
             this.label20.TabIndex = 14;
             this.label20.Text = "Goals:";
             // 
@@ -127,10 +124,9 @@
             this.lblFoods.BackColor = System.Drawing.Color.Transparent;
             this.lblFoods.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblFoods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(116)))), ((int)(((byte)(37)))));
-            this.lblFoods.Location = new System.Drawing.Point(70, 210);
-            this.lblFoods.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFoods.Location = new System.Drawing.Point(100, 350);
             this.lblFoods.Name = "lblFoods";
-            this.lblFoods.Size = new System.Drawing.Size(46, 21);
+            this.lblFoods.Size = new System.Drawing.Size(70, 32);
             this.lblFoods.TabIndex = 12;
             this.lblFoods.Text = "1892";
             // 
@@ -143,10 +139,9 @@
             this.lblWorkouts.BackColor = System.Drawing.Color.Transparent;
             this.lblWorkouts.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblWorkouts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(116)))), ((int)(((byte)(37)))));
-            this.lblWorkouts.Location = new System.Drawing.Point(101, 236);
-            this.lblWorkouts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWorkouts.Location = new System.Drawing.Point(144, 393);
             this.lblWorkouts.Name = "lblWorkouts";
-            this.lblWorkouts.Size = new System.Drawing.Size(46, 21);
+            this.lblWorkouts.Size = new System.Drawing.Size(70, 32);
             this.lblWorkouts.TabIndex = 10;
             this.lblWorkouts.Text = "1892";
             // 
@@ -158,10 +153,9 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(17, 234);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(24, 390);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(88, 21);
+            this.label10.Size = new System.Drawing.Size(132, 32);
             this.label10.TabIndex = 8;
             this.label10.Text = "Workouts:";
             // 
@@ -173,10 +167,9 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(17, 148);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(24, 247);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(259, 21);
+            this.label7.Size = new System.Drawing.Size(397, 32);
             this.label7.TabIndex = 4;
             this.label7.Text = "Remaining = Goal - Food + Exercise";
             // 
@@ -188,10 +181,9 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(17, 210);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(24, 350);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 21);
+            this.label5.Size = new System.Drawing.Size(89, 32);
             this.label5.TabIndex = 2;
             this.label5.Text = "Foods:";
             // 
@@ -203,10 +195,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(17, 120);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(24, 200);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 25);
+            this.label2.Size = new System.Drawing.Size(164, 40);
             this.label2.TabIndex = 1;
             this.label2.Text = "Remaining";
             // 
@@ -218,10 +209,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(17, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(24, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 25);
+            this.label1.Size = new System.Drawing.Size(190, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Your goals is";
             // 
@@ -234,10 +224,9 @@
             this.lblGoalsRemain.BackColor = System.Drawing.Color.Transparent;
             this.lblGoalsRemain.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblGoalsRemain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(116)))), ((int)(((byte)(37)))));
-            this.lblGoalsRemain.Location = new System.Drawing.Point(0, 31);
-            this.lblGoalsRemain.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGoalsRemain.Location = new System.Drawing.Point(0, 52);
             this.lblGoalsRemain.Name = "lblGoalsRemain";
-            this.lblGoalsRemain.Size = new System.Drawing.Size(185, 86);
+            this.lblGoalsRemain.Size = new System.Drawing.Size(274, 128);
             this.lblGoalsRemain.TabIndex = 3;
             this.lblGoalsRemain.Text = "1892";
             this.lblGoalsRemain.Click += new System.EventHandler(this.lblGoalsRemain_Click);
@@ -248,10 +237,9 @@
             this.lblTitle2.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle2.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTitle2.ForeColor = System.Drawing.Color.White;
-            this.lblTitle2.Location = new System.Drawing.Point(90, 90);
-            this.lblTitle2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitle2.Location = new System.Drawing.Point(129, 150);
             this.lblTitle2.Name = "lblTitle2";
-            this.lblTitle2.Size = new System.Drawing.Size(369, 86);
+            this.lblTitle2.Size = new System.Drawing.Size(555, 128);
             this.lblTitle2.TabIndex = 11;
             this.lblTitle2.Text = "MyCalories";
             // 
@@ -261,10 +249,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(99, 188);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(141, 313);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(292, 25);
+            this.label3.Size = new System.Drawing.Size(440, 40);
             this.label3.TabIndex = 12;
             this.label3.Text = "Want to trace your daily calories?";
             // 
@@ -274,10 +261,9 @@
             this.lblTitle1.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTitle1.ForeColor = System.Drawing.Color.White;
-            this.lblTitle1.Location = new System.Drawing.Point(99, 63);
-            this.lblTitle1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitle1.Location = new System.Drawing.Point(141, 105);
             this.lblTitle1.Name = "lblTitle1";
-            this.lblTitle1.Size = new System.Drawing.Size(266, 45);
+            this.lblTitle1.Size = new System.Drawing.Size(392, 65);
             this.lblTitle1.TabIndex = 10;
             this.lblTitle1.Text = "Welcome Back to";
             // 
@@ -288,10 +274,9 @@
             this.linkSetDailyRecord.BackColor = System.Drawing.Color.Transparent;
             this.linkSetDailyRecord.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.linkSetDailyRecord.LinkColor = System.Drawing.Color.White;
-            this.linkSetDailyRecord.Location = new System.Drawing.Point(395, 188);
-            this.linkSetDailyRecord.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkSetDailyRecord.Location = new System.Drawing.Point(587, 313);
             this.linkSetDailyRecord.Name = "linkSetDailyRecord";
-            this.linkSetDailyRecord.Size = new System.Drawing.Size(242, 25);
+            this.linkSetDailyRecord.Size = new System.Drawing.Size(373, 40);
             this.linkSetDailyRecord.TabIndex = 13;
             this.linkSetDailyRecord.TabStop = true;
             this.linkSetDailyRecord.Text = "Set your daily record here";
@@ -303,10 +288,9 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(99, 221);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(141, 368);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(314, 25);
+            this.label4.Size = new System.Drawing.Size(477, 40);
             this.label4.TabIndex = 16;
             this.label4.Text = "Want to update your measurement?";
             // 
@@ -317,10 +301,9 @@
             this.linkSetMeasurement.BackColor = System.Drawing.Color.Transparent;
             this.linkSetMeasurement.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.linkSetMeasurement.LinkColor = System.Drawing.Color.White;
-            this.linkSetMeasurement.Location = new System.Drawing.Point(417, 221);
-            this.linkSetMeasurement.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkSetMeasurement.Location = new System.Drawing.Point(624, 368);
             this.linkSetMeasurement.Name = "linkSetMeasurement";
-            this.linkSetMeasurement.Size = new System.Drawing.Size(346, 25);
+            this.linkSetMeasurement.Size = new System.Drawing.Size(539, 40);
             this.linkSetMeasurement.TabIndex = 17;
             this.linkSetMeasurement.TabStop = true;
             this.linkSetMeasurement.Text = "Set weight, height, and activities here!";
@@ -334,10 +317,9 @@
             this.panelWorkout.Controls.Add(this.label12);
             this.panelWorkout.Controls.Add(this.label13);
             this.panelWorkout.Controls.Add(this.lblWorkoutTodayCount);
-            this.panelWorkout.Location = new System.Drawing.Point(468, 292);
-            this.panelWorkout.Margin = new System.Windows.Forms.Padding(2);
+            this.panelWorkout.Location = new System.Drawing.Point(669, 487);
             this.panelWorkout.Name = "panelWorkout";
-            this.panelWorkout.Size = new System.Drawing.Size(366, 299);
+            this.panelWorkout.Size = new System.Drawing.Size(523, 498);
             this.panelWorkout.TabIndex = 18;
             // 
             // panel2
@@ -345,10 +327,9 @@
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.Controls.Add(this.lblWorkoutTodayCals);
             this.panel2.Controls.Add(this.lblWorkoutTodayName);
-            this.panel2.Location = new System.Drawing.Point(25, 195);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(36, 325);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(316, 62);
+            this.panel2.Size = new System.Drawing.Size(451, 103);
             this.panel2.TabIndex = 6;
             // 
             // lblWorkoutTodayCals
@@ -356,10 +337,9 @@
             this.lblWorkoutTodayCals.BackColor = System.Drawing.Color.Transparent;
             this.lblWorkoutTodayCals.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblWorkoutTodayCals.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblWorkoutTodayCals.Location = new System.Drawing.Point(17, 29);
-            this.lblWorkoutTodayCals.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWorkoutTodayCals.Location = new System.Drawing.Point(24, 48);
             this.lblWorkoutTodayCals.Name = "lblWorkoutTodayCals";
-            this.lblWorkoutTodayCals.Size = new System.Drawing.Size(79, 19);
+            this.lblWorkoutTodayCals.Size = new System.Drawing.Size(113, 32);
             this.lblWorkoutTodayCals.TabIndex = 9;
             this.lblWorkoutTodayCals.Text = "     12 cals";
             this.lblWorkoutTodayCals.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -369,10 +349,9 @@
             this.lblWorkoutTodayName.AutoSize = true;
             this.lblWorkoutTodayName.BackColor = System.Drawing.Color.Transparent;
             this.lblWorkoutTodayName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblWorkoutTodayName.Location = new System.Drawing.Point(17, 10);
-            this.lblWorkoutTodayName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWorkoutTodayName.Location = new System.Drawing.Point(24, 17);
             this.lblWorkoutTodayName.Name = "lblWorkoutTodayName";
-            this.lblWorkoutTodayName.Size = new System.Drawing.Size(98, 21);
+            this.lblWorkoutTodayName.Size = new System.Drawing.Size(148, 32);
             this.lblWorkoutTodayName.TabIndex = 8;
             this.lblWorkoutTodayName.Text = "Sit-up (15x)";
             // 
@@ -381,10 +360,9 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(25, 161);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(36, 268);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(149, 21);
+            this.label12.Size = new System.Drawing.Size(223, 32);
             this.label12.TabIndex = 7;
             this.label12.Text = "Recent workout(s)";
             // 
@@ -393,10 +371,9 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(25, 106);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Location = new System.Drawing.Point(36, 177);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(170, 25);
+            this.label13.Size = new System.Drawing.Size(260, 40);
             this.label13.TabIndex = 5;
             this.label13.Text = "Workout(s) today";
             // 
@@ -406,10 +383,9 @@
             this.lblWorkoutTodayCount.BackColor = System.Drawing.Color.Transparent;
             this.lblWorkoutTodayCount.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblWorkoutTodayCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(116)))), ((int)(((byte)(37)))));
-            this.lblWorkoutTodayCount.Location = new System.Drawing.Point(13, 20);
-            this.lblWorkoutTodayCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWorkoutTodayCount.Location = new System.Drawing.Point(19, 33);
             this.lblWorkoutTodayCount.Name = "lblWorkoutTodayCount";
-            this.lblWorkoutTodayCount.Size = new System.Drawing.Size(74, 86);
+            this.lblWorkoutTodayCount.Size = new System.Drawing.Size(109, 128);
             this.lblWorkoutTodayCount.TabIndex = 4;
             this.lblWorkoutTodayCount.Text = "0";
             // 
@@ -421,10 +397,9 @@
             this.panelFood.Controls.Add(this.label23);
             this.panelFood.Controls.Add(this.label24);
             this.panelFood.Controls.Add(this.lblFoodTodayCount);
-            this.panelFood.Location = new System.Drawing.Point(864, 292);
-            this.panelFood.Margin = new System.Windows.Forms.Padding(2);
+            this.panelFood.Location = new System.Drawing.Point(1234, 487);
             this.panelFood.Name = "panelFood";
-            this.panelFood.Size = new System.Drawing.Size(366, 299);
+            this.panelFood.Size = new System.Drawing.Size(523, 498);
             this.panelFood.TabIndex = 18;
             // 
             // panel3
@@ -432,10 +407,9 @@
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Controls.Add(this.lblFoodTodayCals);
             this.panel3.Controls.Add(this.lblFoodTodayName);
-            this.panel3.Location = new System.Drawing.Point(25, 195);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(36, 325);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(316, 62);
+            this.panel3.Size = new System.Drawing.Size(451, 103);
             this.panel3.TabIndex = 6;
             // 
             // lblFoodTodayCals
@@ -443,10 +417,9 @@
             this.lblFoodTodayCals.BackColor = System.Drawing.Color.Transparent;
             this.lblFoodTodayCals.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblFoodTodayCals.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblFoodTodayCals.Location = new System.Drawing.Point(17, 29);
-            this.lblFoodTodayCals.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFoodTodayCals.Location = new System.Drawing.Point(24, 48);
             this.lblFoodTodayCals.Name = "lblFoodTodayCals";
-            this.lblFoodTodayCals.Size = new System.Drawing.Size(79, 19);
+            this.lblFoodTodayCals.Size = new System.Drawing.Size(113, 32);
             this.lblFoodTodayCals.TabIndex = 9;
             this.lblFoodTodayCals.Text = "     12 cals";
             this.lblFoodTodayCals.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -456,10 +429,9 @@
             this.lblFoodTodayName.AutoSize = true;
             this.lblFoodTodayName.BackColor = System.Drawing.Color.Transparent;
             this.lblFoodTodayName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFoodTodayName.Location = new System.Drawing.Point(17, 10);
-            this.lblFoodTodayName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFoodTodayName.Location = new System.Drawing.Point(24, 17);
             this.lblFoodTodayName.Name = "lblFoodTodayName";
-            this.lblFoodTodayName.Size = new System.Drawing.Size(52, 21);
+            this.lblFoodTodayName.Size = new System.Drawing.Size(76, 32);
             this.lblFoodTodayName.TabIndex = 8;
             this.lblFoodTodayName.Text = "Lotek";
             // 
@@ -468,10 +440,9 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label23.Location = new System.Drawing.Point(25, 161);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Location = new System.Drawing.Point(36, 268);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(121, 21);
+            this.label23.Size = new System.Drawing.Size(181, 32);
             this.label23.TabIndex = 7;
             this.label23.Text = "Recent food(s)";
             // 
@@ -480,10 +451,9 @@
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label24.Location = new System.Drawing.Point(25, 106);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Location = new System.Drawing.Point(36, 177);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(136, 25);
+            this.label24.Size = new System.Drawing.Size(208, 40);
             this.label24.TabIndex = 5;
             this.label24.Text = "Food(s) today";
             // 
@@ -493,20 +463,19 @@
             this.lblFoodTodayCount.BackColor = System.Drawing.Color.Transparent;
             this.lblFoodTodayCount.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblFoodTodayCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(116)))), ((int)(((byte)(37)))));
-            this.lblFoodTodayCount.Location = new System.Drawing.Point(13, 20);
-            this.lblFoodTodayCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFoodTodayCount.Location = new System.Drawing.Point(19, 33);
             this.lblFoodTodayCount.Name = "lblFoodTodayCount";
-            this.lblFoodTodayCount.Size = new System.Drawing.Size(74, 86);
+            this.lblFoodTodayCount.Size = new System.Drawing.Size(109, 128);
             this.lblFoodTodayCount.TabIndex = 4;
             this.lblFoodTodayCount.Text = "0";
             // 
             // FormHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MyCalories.Properties.Resources.image_2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(1829, 1200);
             this.Controls.Add(this.panelFood);
             this.Controls.Add(this.panelWorkout);
             this.Controls.Add(this.label4);
@@ -518,7 +487,6 @@
             this.Controls.Add(this.linkSetDailyRecord);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormHome";
             this.Text = "FormHome";
             this.Load += new System.EventHandler(this.FormHome_Load);

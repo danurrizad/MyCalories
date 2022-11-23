@@ -34,6 +34,7 @@ namespace MyCalories
             this.cbRoles = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pnlHealthStatus = new System.Windows.Forms.Panel();
+            this.tbActivities = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlWeight = new System.Windows.Forms.Panel();
             this.tbWeight = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@ namespace MyCalories
             this.userBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.tbActivities = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.panelForm.SuspendLayout();
             this.pnlRoles.SuspendLayout();
@@ -80,7 +80,7 @@ namespace MyCalories
             this.lblTitle2.Location = new System.Drawing.Point(48, 23);
             this.lblTitle2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle2.Name = "lblTitle2";
-            this.lblTitle2.Size = new System.Drawing.Size(116, 50);
+            this.lblTitle2.Size = new System.Drawing.Size(174, 74);
             this.lblTitle2.TabIndex = 9;
             this.lblTitle2.Text = "Users";
             // 
@@ -99,6 +99,7 @@ namespace MyCalories
             this.dgvData.Location = new System.Drawing.Point(48, 86);
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
+            this.dgvData.RowHeadersWidth = 62;
             this.dgvData.RowTemplate.Height = 25;
             this.dgvData.Size = new System.Drawing.Size(527, 466);
             this.dgvData.TabIndex = 10;
@@ -171,9 +172,9 @@ namespace MyCalories
             this.cbRoles.Items.AddRange(new object[] {
             "Admin",
             "User"});
-            this.cbRoles.Location = new System.Drawing.Point(0, 22);
+            this.cbRoles.Location = new System.Drawing.Point(0, 23);
             this.cbRoles.Name = "cbRoles";
-            this.cbRoles.Size = new System.Drawing.Size(352, 23);
+            this.cbRoles.Size = new System.Drawing.Size(352, 33);
             this.cbRoles.TabIndex = 18;
             // 
             // label8
@@ -183,7 +184,7 @@ namespace MyCalories
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 15);
+            this.label8.Size = new System.Drawing.Size(57, 25);
             this.label8.TabIndex = 15;
             this.label8.Text = "Roles";
             // 
@@ -197,14 +198,26 @@ namespace MyCalories
             this.pnlHealthStatus.Size = new System.Drawing.Size(352, 45);
             this.pnlHealthStatus.TabIndex = 20;
             // 
+            // tbActivities
+            // 
+            this.tbActivities.BackColor = System.Drawing.SystemColors.Control;
+            this.tbActivities.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbActivities.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbActivities.Location = new System.Drawing.Point(0, 18);
+            this.tbActivities.Multiline = true;
+            this.tbActivities.Name = "tbActivities";
+            this.tbActivities.PlaceholderText = "How many workout in a week?";
+            this.tbActivities.Size = new System.Drawing.Size(352, 27);
+            this.tbActivities.TabIndex = 16;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Location = new System.Drawing.Point(0, -3);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 15);
+            this.label7.Size = new System.Drawing.Size(88, 25);
             this.label7.TabIndex = 15;
             this.label7.Text = "Activities";
             // 
@@ -235,9 +248,9 @@ namespace MyCalories
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Location = new System.Drawing.Point(0, -5);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 15);
+            this.label6.Size = new System.Drawing.Size(72, 25);
             this.label6.TabIndex = 15;
             this.label6.Text = "Weight";
             // 
@@ -267,9 +280,9 @@ namespace MyCalories
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Location = new System.Drawing.Point(0, -6);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 15);
+            this.label5.Size = new System.Drawing.Size(68, 25);
             this.label5.TabIndex = 15;
             this.label5.Text = "Height";
             // 
@@ -295,7 +308,7 @@ namespace MyCalories
             "Male"});
             this.cbGender.Location = new System.Drawing.Point(0, 22);
             this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(352, 23);
+            this.cbGender.Size = new System.Drawing.Size(352, 33);
             this.cbGender.Sorted = true;
             this.cbGender.TabIndex = 16;
             // 
@@ -306,7 +319,7 @@ namespace MyCalories
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 15);
+            this.label4.Size = new System.Drawing.Size(74, 25);
             this.label4.TabIndex = 15;
             this.label4.Text = "Gender";
             // 
@@ -336,9 +349,9 @@ namespace MyCalories
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Location = new System.Drawing.Point(0, -5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 15);
+            this.label3.Size = new System.Drawing.Size(45, 25);
             this.label3.TabIndex = 15;
             this.label3.Text = "Age";
             // 
@@ -352,7 +365,7 @@ namespace MyCalories
             this.label1.Location = new System.Drawing.Point(136, 63);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 32);
+            this.label1.Size = new System.Drawing.Size(193, 48);
             this.label1.TabIndex = 12;
             this.label1.Text = "User Form";
             // 
@@ -382,9 +395,9 @@ namespace MyCalories
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Location = new System.Drawing.Point(0, -5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 15);
+            this.label2.Size = new System.Drawing.Size(60, 25);
             this.label2.TabIndex = 15;
             this.label2.Text = "Nama";
             // 
@@ -405,10 +418,10 @@ namespace MyCalories
             this.tbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbSearch.Location = new System.Drawing.Point(289, 42);
+            this.tbSearch.Location = new System.Drawing.Point(341, 42);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.PlaceholderText = "Search by name or gender";
-            this.tbSearch.Size = new System.Drawing.Size(286, 23);
+            this.tbSearch.Size = new System.Drawing.Size(234, 31);
             this.tbSearch.TabIndex = 23;
             this.tbSearch.WordWrap = false;
             this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
@@ -423,21 +436,9 @@ namespace MyCalories
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label9.Location = new System.Drawing.Point(203, 43);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 17);
+            this.label9.Size = new System.Drawing.Size(122, 28);
             this.label9.TabIndex = 24;
             this.label9.Text = "Search Here";
-            // 
-            // tbActivities
-            // 
-            this.tbActivities.BackColor = System.Drawing.SystemColors.Control;
-            this.tbActivities.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbActivities.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbActivities.Location = new System.Drawing.Point(0, 18);
-            this.tbActivities.Multiline = true;
-            this.tbActivities.Name = "tbActivities";
-            this.tbActivities.PlaceholderText = "How many workout in a week?";
-            this.tbActivities.Size = new System.Drawing.Size(352, 27);
-            this.tbActivities.TabIndex = 16;
             // 
             // FormUser
             // 
