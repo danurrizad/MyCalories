@@ -131,6 +131,7 @@ namespace MyCalories
         //--------------------------------------------------------Button Nutricion Facts List----------------------------------------------------------------------
         private void btnNutriFact_Click(object sender, EventArgs e)
         {
+
             //Backcolor Button Lain Menjadi Transparan
             ClearButtonColor();
             panelNutriFact.BackColor = Color.FromArgb(156, 156, 156);
@@ -144,6 +145,7 @@ namespace MyCalories
 
             //Mengubah Judul Form
             this.Text = "Nutricion Facts";
+
         }
 
 
@@ -207,7 +209,8 @@ namespace MyCalories
         }
 
         private void btnExercise_Click(object sender, EventArgs e)
-        {
+        { 
+
             //Backcolor Button Lain Menjadi Transparan
             ClearButtonColor();
             panelExercise.BackColor = Color.FromArgb(156, 156, 156);
@@ -221,6 +224,7 @@ namespace MyCalories
 
             //Mengubah Judul Form
             this.Text = "Exercise List";
+
         }
     }
 }

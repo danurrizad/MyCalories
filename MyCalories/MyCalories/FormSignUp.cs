@@ -79,7 +79,7 @@ namespace MyCalories
             User user = new User();
 
 
-            if (tbName.Text==""||tbAge.Text==""||lbGender.Text==""||tbHeight.Text==""||tbWeight.Text==""||lbHealthStatus.Text==""||tbEmail.Text==""||tbPass.Text==""||tbKonfPass.Text=="")
+            if (tbName.Text==""||tbAge.Text==""||lbGender.Text==""||tbHeight.Text==""||tbWeight.Text==""|| tbActivities.Text==""||tbEmail.Text==""||tbPass.Text==""||tbKonfPass.Text=="")
             {
                 if (string.IsNullOrEmpty(tbName.Text))
                 {
@@ -133,10 +133,10 @@ namespace MyCalories
                     errorProvider1.Clear();
                 }
 
-                if (string.IsNullOrEmpty(lbHealthStatus.Text))
+                if (string.IsNullOrEmpty(tbActivities.Text))
                 {
-                    lbHealthStatus.Focus();
-                    errorProvider1.SetError(lbHealthStatus, "Please Enter Health Status");
+                    tbActivities.Focus();
+                    errorProvider1.SetError(tbActivities, "Please Enter Activity");
                 }
                 else
                 {
@@ -177,7 +177,7 @@ namespace MyCalories
 
             else
             {
-                user.SignUp(tbName.Text, Convert.ToInt32(tbAge.Text), Convert.ToString(lbGender.Text), Convert.ToDouble(tbHeight.Text), Convert.ToDouble(tbWeight.Text), lbHealthStatus.Text, tbEmail.Text, tbPass.Text, tbKonfPass.Text);
+                user.SignUp(tbName.Text, Convert.ToInt32(tbAge.Text), Convert.ToString(lbGender.Text), Convert.ToDouble(tbHeight.Text), Convert.ToDouble(tbWeight.Text), int.Parse(tbActivities.Text), tbEmail.Text, tbPass.Text, tbKonfPass.Text);
                 if (user.condition == true)
                 {
                     FormLogin formLogin = new FormLogin();

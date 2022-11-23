@@ -149,9 +149,6 @@ namespace MyCalories
 
         private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //MessageBox.Show(e.ColumnIndex.ToString());
-            //MessageBox.Show(dgvData.ColumnCount.ToString());
-            //MessageBox.Show(dgvData.Rows[e.RowIndex].Cells[0].Value.ToString());
 
             if (e.ColumnIndex == dgvData.ColumnCount - 2)
             {

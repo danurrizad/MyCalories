@@ -151,7 +151,8 @@
             this.lblWorkoutBurnedCalories.Name = "lblWorkoutBurnedCalories";
             this.lblWorkoutBurnedCalories.Size = new System.Drawing.Size(93, 21);
             this.lblWorkoutBurnedCalories.TabIndex = 40;
-            this.lblWorkoutBurnedCalories.Text = "<workout>";
+            this.lblWorkoutBurnedCalories.Text = "0";
+            this.lblWorkoutBurnedCalories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblWorkoutBurnedCalories.TextChanged += new System.EventHandler(this.lblWorkoutBurnedCalories_TextChanged);
             // 
             // lblFoodCalories
@@ -162,7 +163,7 @@
             this.lblFoodCalories.Name = "lblFoodCalories";
             this.lblFoodCalories.Size = new System.Drawing.Size(93, 21);
             this.lblFoodCalories.TabIndex = 39;
-            this.lblFoodCalories.Text = "<food>";
+            this.lblFoodCalories.Text = "0";
             this.lblFoodCalories.TextChanged += new System.EventHandler(this.lblFoodCalories_TextChanged);
             // 
             // lblWorkout

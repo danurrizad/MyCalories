@@ -23,28 +23,61 @@ namespace MyCalories
 
         private void LoadFoodsPanel()
         {
-            List<object[]> foods = DailyRecords.GetFoodsToday();
-            int foodsCount = DailyRecords.GetFoodsTodayCount();
+            try
+            {
+                List<object[]> foods = DailyRecords.GetFoodsToday();
+                int foodsCount = DailyRecords.GetFoodsTodayCount();
 
-            // food[0][0] -> Food Name in first row
-            // food[0][1] -> Food Calories in first row
+                // food[0][0] -> Food Name in first row
+                // food[0][1] -> Food Calories in first row
+                if(foods == null)
+                {
+                    lblFoodTodayCount.Text = foodsCount.ToString();
+                    lblFoodTodayName.Text = "";
+                    lblFoodTodayCals.Text = "" + " cals";
+                }
+                else
+                {
+                    lblFoodTodayCount.Text = foodsCount.ToString();
+                    lblFoodTodayName.Text = foods[0][0].ToString();
+                    lblFoodTodayCals.Text = foods[0][1].ToString() + " cals";
+                }
 
-            lblFoodTodayCount.Text = foodsCount.ToString();
-            lblFoodTodayName.Text = foods[0][0].ToString();
-            lblFoodTodayCals.Text = foods[0][1].ToString() + " cals";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void LoadWorkoutsPanel()
         {
-            List<object[]> workouts = DailyRecords.GetWorkoutsToday();
-            int workoutCount = DailyRecords.GetWorkoutsTodayCount();
+            try
+            {
+                List<object[]> workouts = DailyRecords.GetWorkoutsToday();
+                int workoutCount = DailyRecords.GetWorkoutsTodayCount();
 
-            // workouts[0][0] -> Workouts Name in first row
-            // workouts[0][1] -> Workouts Calories in first row
+                // workouts[0][0] -> Workouts Name in first row
+                // workouts[0][1] -> Workouts Calories in first row
 
-            lblWorkoutTodayCount.Text = workoutCount.ToString();
-            lblWorkoutTodayName.Text = workouts[0][0].ToString();
-            lblWorkoutTodayCals.Text = workouts[0][1].ToString() + " cals";
+                if (workouts == null)
+                {
+                    lblWorkoutTodayCount.Text = workoutCount.ToString();
+                    lblWorkoutTodayName.Text = "";
+                    lblWorkoutTodayCals.Text = "" + " cals";
+                }
+                else
+                {
+                    lblWorkoutTodayCount.Text = workoutCount.ToString();
+                    lblWorkoutTodayName.Text = workouts[0][0].ToString();
+                    lblWorkoutTodayCals.Text = workouts[0][1].ToString() + " cals";
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private double GetTotalWorkoutCaloriesToday()
@@ -52,9 +85,16 @@ namespace MyCalories
             double total = 0;
             List<object[]> workouts = DailyRecords.GetWorkoutsToday();
 
-            foreach(var workout in workouts)
+            if (workouts != null)
             {
-                total += double.Parse(workout[1].ToString());
+                foreach (var workout in workouts)
+                {
+                    total += double.Parse(workout[1].ToString());
+                }
+            }
+            else
+            {
+                total = 0;
             }
 
             return total;
@@ -66,9 +106,16 @@ namespace MyCalories
 
             List<object[]> foods = DailyRecords.GetFoodsToday();
 
-            foreach (var food in foods)
+            if(foods != null)
             {
-                total += double.Parse(food[1].ToString());
+                foreach (var food in foods)
+                {
+                    total += double.Parse(food[1].ToString());
+                }
+            }
+            else
+            {
+                total = 0;
             }
 
             return total;

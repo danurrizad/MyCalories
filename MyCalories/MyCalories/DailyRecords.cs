@@ -18,8 +18,8 @@ namespace MyCalories
     {
         private int _id_dailycalories;
         private int _id_user;
-        private int _id_food;
-        private int _id_workout;
+        private int? _id_food;
+        private int? _id_workout;
         private DateTime _datetime;
 
         // Connection variables
@@ -30,13 +30,7 @@ namespace MyCalories
         //Other classes
         Food food;
         Workout workout;
-
-        // Generic SQL
-        private static string sql = "select id_calories_flow, users.id_user, users.name, food.id_food, food.name, food.calories, workout.id_workout, workout.name, workout.burned_calories, datetime from calories_flow " +
-                "inner join users on calories_flow.id_user = users.id_user " +
-                "inner join food on calories_flow.id_food = food.id_food " +
-                "inner join workout on calories_flow.id_workout = workout.id_workout ";
-
+        FormDailyRecords form;
 
         public DailyRecords() { }
 
@@ -61,13 +55,13 @@ namespace MyCalories
             set { _id_user = value; }
         }
 
-        public int IDFood
+        public int? IDFood
         {
             get { return _id_food; }
             set { _id_food = value; }
         }
 
-        public int IDWorkout
+        public int? IDWorkout
         {
             get { return _id_workout; }
             set { _id_workout = value; }
@@ -84,16 +78,30 @@ namespace MyCalories
             NpgsqlConnection conn = new Connection().GetConnection();
             conn.Open();
 
-            string query = "insert into calories_flow values (default, @id_user, @id_food, @id_workout, @datetime)";
+            string query = "";
 
+            if (newRecord.IDFood == null)
+            {
+                query = $"insert into calories_flow values (default, @id_user, null, {newRecord.IDWorkout.ToString()}, @datetime)";
+            }
+            else if (newRecord.IDWorkout == null)
+            {
+                query = $"insert into calories_flow values (default, @id_user, {newRecord.IDFood.ToString()}, null, @datetime)";
+            }
+            else
+            {
+                query = $"insert into calories_flow values (default, @id_user, {newRecord.IDFood.ToString()}, {newRecord.IDWorkout.ToString()}, @datetime)";
+            }
+            
             try
             {
                 cmd = new NpgsqlCommand(query, conn);
                 cmd.CommandType = CommandType.Text;
 
+
                 cmd.Parameters.Add("@id_user", NpgsqlDbType.Integer).Value = newRecord.IDUser;
-                cmd.Parameters.Add("@id_food", NpgsqlDbType.Integer).Value = newRecord.IDFood;
-                cmd.Parameters.Add("@id_workout", NpgsqlDbType.Integer).Value = newRecord.IDWorkout;
+                //cmd.Parameters.Add("@id_food", NpgsqlDbType.Integer).Value = newRecord.IDFood;
+                //cmd.Parameters.Add("@id_workout", NpgsqlDbType.Integer).Value = newRecord.IDWorkout;
                 cmd.Parameters.Add("@datetime", NpgsqlDbType.Date).Value = newRecord.Datetime;
 
                 cmd.ExecuteNonQuery();
@@ -166,21 +174,20 @@ namespace MyCalories
 
         public static void SearchRecord(string query, DataGridView dgvData)
         {
-            sql += $"OR lower(food.name) LIKE lower('%{query}%') ";
+            string sql = "select id_calories_flow, users.id_user, users.name, food.id_food, food.name, food.calories, workout.id_workout, workout.name, workout.burned_calories, datetime from calories_flow " +
+                "left join users on calories_flow.id_user = users.id_user " +
+                "left join food on calories_flow.id_food = food.id_food " +
+                $"left join workout on calories_flow.id_workout = workout.id_workout where lower(food.name) LIKE lower('%{query}%')";
 
             GetData.ShowData(sql, dgvData);
         }
 
         public static void GetAllRecords(DataGridView dgvData)
         {
-            sql +=  "";
-
-            GetData.ShowData(sql, dgvData);
-        }
-
-        public static void ClearAllRecords(DataGridView dgvData)
-        {
-            string sql = "truncate table calories_flow";
+            string sql = "select id_calories_flow, users.id_user, users.name, food.id_food, food.name, food.calories, workout.id_workout, workout.name, workout.burned_calories, datetime from calories_flow " +
+                "left join users on calories_flow.id_user = users.id_user " +
+                "left join food on calories_flow.id_food = food.id_food " +
+                $"left join workout on calories_flow.id_workout = workout.id_workout where datetime='{DateTime.UtcNow.Date}'";
             GetData.ShowData(sql, dgvData);
         }
 
@@ -232,7 +239,7 @@ namespace MyCalories
 
         public static List<object[]> GetFoodsToday()
         {
-            string query = $"select food.name, food.calories from calories_flow inner join food on calories_flow.id_food = food.id_food where datetime='{DateTime.UtcNow.Date}' order by datetime desc";
+            string query = $"select food.name, food.calories from calories_flow inner join food on calories_flow.id_food = food.id_food where datetime='{DateTime.Now.ToString("yyyy-MM-dd")}' order by datetime desc";
 
             NpgsqlConnection conn = new Connection().GetConnection();
             conn.Open();
@@ -244,7 +251,17 @@ namespace MyCalories
             {
                 da.Fill(dt);
                 List<object[]> foods = dt.AsEnumerable().Select(n => n.ItemArray).ToList();
-                return foods;
+
+                if (foods == null) throw new Exception("Data is empty");
+
+                if(dt.Rows.Count > 0)
+                {
+                    return foods;
+                }
+                else
+                {
+                    return foods = null;
+                }
             }
             catch (Exception ex)
             {
@@ -255,7 +272,7 @@ namespace MyCalories
 
         public static List<object[]> GetWorkoutsToday()
         {
-            string query = $"select workout.name, workout.burned_calories from calories_flow inner join workout on calories_flow.id_workout = workout.id_workout where datetime='{DateTime.UtcNow.Date}' order by datetime desc";
+            string query = $"select workout.name, workout.burned_calories from calories_flow inner join workout on calories_flow.id_workout = workout.id_workout where datetime='{DateTime.Now.ToString("yyyy-MM-dd")}' order by datetime desc";
 
             NpgsqlConnection conn = new Connection().GetConnection();
             conn.Open();
@@ -267,7 +284,17 @@ namespace MyCalories
             {
                 da.Fill(dt);
                 List<object[]> workouts = dt.AsEnumerable().Select(n => n.ItemArray).ToList();
-                return workouts;
+
+                if (workouts == null) throw new Exception("Data is empty");
+
+                if (dt.Rows.Count > 0)
+                {
+                    return workouts;
+                }
+                else
+                {
+                    return workouts = null;
+                }
             }
             catch (Exception ex)
             {
@@ -280,7 +307,7 @@ namespace MyCalories
         {
             try
             {
-                cmd.CommandText = "select count(*) FROM food";
+                cmd.CommandText = $"select count(food.name) FROM calories_flow inner join food on calories_flow.id_food = food.id_food where datetime='{DateTime.Now.ToString("yyyy-MM-dd")}'";
                 return (int)(long)cmd.ExecuteScalar();
             }
             catch (Exception ex)
@@ -293,7 +320,7 @@ namespace MyCalories
         {
             try
             {
-                cmd.CommandText = "select count(*) FROM workout";
+                cmd.CommandText = $"select count(workout.name) FROM calories_flow inner join workout on calories_flow.id_workout = workout.id_workout where datetime='{DateTime.Now.ToString("yyyy-MM-dd")}'";
                 return (int)(long)cmd.ExecuteScalar();
             }
             catch(Exception ex)

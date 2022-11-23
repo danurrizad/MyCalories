@@ -22,7 +22,7 @@ namespace MyCalories
             this.user = user;
             record = new DailyRecords();
             record.IDUser = this.user.ID;
-            record.Datetime = DateTime.UtcNow.Date;
+            record.Datetime = DateTime.Now;
         }
 
         private double GetRDA()
@@ -69,9 +69,17 @@ namespace MyCalories
         {
             double total = 0;
 
-            if(lblFoodCalories.Text == "" || lblWorkoutBurnedCalories.Text == "")
+            if(lblFoodCalories.Text == "" && lblWorkoutBurnedCalories.Text == "")
             {
-                total = 0;
+                total += 0;
+            }
+            else if(lblWorkoutBurnedCalories.Text == "")
+            {
+                total += double.Parse(lblFoodCalories.Text);
+            }
+            else if(lblFoodCalories.Text == "")
+            {
+                total -= double.Parse(lblWorkoutBurnedCalories.Text);
             }
             else
             {
@@ -104,6 +112,7 @@ namespace MyCalories
                         lblFoodCalories.Text = food[2].ToString();
                     }
                 }
+
             }
             catch(Exception ex)
             {

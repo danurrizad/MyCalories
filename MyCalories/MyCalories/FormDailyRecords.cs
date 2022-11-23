@@ -46,7 +46,7 @@ namespace MyCalories
 
         private void FormDailyRecords_Load(object sender, EventArgs e)
         {
-            
+            Display();
         }
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
@@ -56,35 +56,16 @@ namespace MyCalories
 
         private void btnClearData_Click(object sender, EventArgs e)
         {
-            if(dgvData.Rows.Count == 0)
-            {
-                MessageBox.Show("The data is already empty", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                if (MessageBox.Show($"Are you want to delete all records ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    try
-                    {
-                        DailyRecords.ClearAllRecords(dgvData);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
 
-                    Display();
-                }
-            }
         }
 
         private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == /*dgvData.ColumnCount - 1*/ 0)
+            if (e.ColumnIndex == dgvData.ColumnCount - 1 || e.ColumnIndex == 0)
             {
                 try
                 {
-                    int deleted_id = int.Parse(dgvData.Rows[e.RowIndex].Cells[1].Value.ToString());
+                    int deleted_id = int.Parse(dgvData.Rows[e.RowIndex].Cells[0].Value.ToString());
 
                     if (MessageBox.Show($"Are you want to delete record with id: {deleted_id.ToString()} ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {

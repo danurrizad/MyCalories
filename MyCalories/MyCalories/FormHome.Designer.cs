@@ -334,7 +334,7 @@
             this.panelWorkout.Controls.Add(this.label12);
             this.panelWorkout.Controls.Add(this.label13);
             this.panelWorkout.Controls.Add(this.lblWorkoutTodayCount);
-            this.panelWorkout.Location = new System.Drawing.Point(463, 292);
+            this.panelWorkout.Location = new System.Drawing.Point(468, 292);
             this.panelWorkout.Margin = new System.Windows.Forms.Padding(2);
             this.panelWorkout.Name = "panelWorkout";
             this.panelWorkout.Size = new System.Drawing.Size(366, 299);
