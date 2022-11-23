@@ -73,7 +73,7 @@
             // 
             // tbHeight
             // 
-            this.tbHeight.BackColor = System.Drawing.Color.White;
+            this.tbHeight.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbHeight.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbHeight.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbHeight.Location = new System.Drawing.Point(19, 7);
@@ -118,7 +118,7 @@
             // 
             // tbWeight
             // 
-            this.tbWeight.BackColor = System.Drawing.Color.White;
+            this.tbWeight.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbWeight.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbWeight.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbWeight.Location = new System.Drawing.Point(19, 7);
@@ -163,7 +163,7 @@
             // 
             // tbActivities
             // 
-            this.tbActivities.BackColor = System.Drawing.Color.White;
+            this.tbActivities.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbActivities.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbActivities.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbActivities.Location = new System.Drawing.Point(19, 7);
@@ -239,6 +239,7 @@
             this.Controls.Add(this.panelHeight);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "FormSetMeasurement";
             this.Text = "Set Measurement";
             this.Load += new System.EventHandler(this.FormSetMeasurement_Load);

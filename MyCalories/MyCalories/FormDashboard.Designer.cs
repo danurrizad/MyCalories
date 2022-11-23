@@ -450,7 +450,6 @@
         private Panel panelBMI;
         private Panel panelBMR;
         private Panel panelNutriFact;
-        private Panel pnlFormLoader;
         private Button btnLogo;
         private Panel panelUser;
         private PictureBox pictureBox7;
@@ -464,5 +463,6 @@
         private PictureBox pictureBox4;
         private Button btnExercise;
         private Button btnUsers;
+        public Panel pnlFormLoader;
     }
 }

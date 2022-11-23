@@ -89,12 +89,43 @@ namespace MyCalories
             return total;
         }
 
+        private void LoadRDA()
+        {
+            double goalsCal = 0;
+
+            if (user.Gender.ToLower() == "male")
+            {
+                MaleUser male = new MaleUser
+                {
+                    Weight = user.Weight,
+                    Height = user.Height,
+                    Age = user.Age,
+                    Activities = user.Activities
+                };
+                goalsCal = male.GetRDA();
+            }
+            else if (user.Gender.ToLower() == "female")
+            {
+                FemaleUser female = new FemaleUser
+                {
+                    Weight = user.Weight,
+                    Height = user.Height,
+                    Age = user.Age,
+                    Activities = user.Activities
+                };
+                goalsCal = female.GetRDA();
+            }
+
+            lblRDA.Text = goalsCal.ToString();
+        }
+
         private void FormSetRecord_Load(object sender, EventArgs e)
         {
             lblRDA.Text = GetRDA().ToString("0.##");
             ShowFoodNames();
             ShowWorkoutNames();
             ClearRecord();
+            LoadRDA();
         }
 
         private void btnAddFood_Click(object sender, EventArgs e)

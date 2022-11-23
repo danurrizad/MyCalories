@@ -24,16 +24,26 @@ namespace MyCalories
             double BMR = CalculateBMR();
 
             //Based on sehatq.com
-            if (this.Activities == 0)
+            if (Activities == 0)
+            {
                 RDA = 1.2 * BMR;
-            else if (this.Activities > 0 || this.Activities <= 3)
+            }
+            else if (Activities > 0 && Activities <= 3) 
+            { 
                 RDA = 1.375 * BMR;
-            else if (this.Activities > 3 || this.Activities <= 5)
+            }  
+            else if (Activities > 3 && Activities <= 5) 
+            { 
                 RDA = 1.55 * BMR;
-            else if (this.Activities > 5 || this.Activities <= 7)
+            } 
+            else if (Activities > 5 && Activities <= 7) 
+            { 
                 RDA = 1.725 * BMR;
+            }
             else
+            {
                 RDA = 1.9 * BMR;
+            }
 
             return RDA;
         }

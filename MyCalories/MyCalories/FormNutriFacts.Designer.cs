@@ -297,7 +297,7 @@
             this.tbNama.Location = new System.Drawing.Point(0, 18);
             this.tbNama.Multiline = true;
             this.tbNama.Name = "tbNama";
-            this.tbNama.PlaceholderText = "Input your name here";
+            this.tbNama.PlaceholderText = "Input your food name here";
             this.tbNama.Size = new System.Drawing.Size(352, 27);
             this.tbNama.TabIndex = 13;
             // 

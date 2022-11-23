@@ -27,7 +27,7 @@ namespace MyCalories
             btnBMR.FlatAppearance.MouseDownBackColor = btnBMR.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnExercise.FlatAppearance.MouseDownBackColor = btnExercise.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnNutriFact.FlatAppearance.MouseDownBackColor =  btnNutriFact.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            btnLogout.FlatAppearance.MouseDownBackColor = btnLogout.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnLogout.FlatAppearance.MouseDownBackColor = btnLogout.FlatAppearance.MouseOverBackColor = Color.DarkRed;
             btnLogo.FlatAppearance.MouseDownBackColor = btnLogo.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnUsers.FlatAppearance.MouseDownBackColor = btnUsers.FlatAppearance.MouseOverBackColor = Color.Transparent;
 

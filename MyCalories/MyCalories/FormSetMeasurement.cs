@@ -29,7 +29,7 @@ namespace MyCalories
 
         private void FormSetMeasurement_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -41,20 +41,10 @@ namespace MyCalories
         {
             try
             {
-                user = new User(
-                        user.ID,
-                        user.Name,
-                        user.Age,
-                        user.Gender,
-                        double.Parse(tbHeight.Text),
-                        double.Parse(tbWeight.Text),
-                        int.Parse(tbActivities.Text),
-                        user.Roles,
-                        user.Email,
-                        user.Password
-                    );
+                user.Height = double.Parse(tbHeight.Text);
+                user.Weight = double.Parse(tbWeight.Text);
+                user.Activities = int.Parse(tbActivities.Text);
 
-                user.EditUser(user, user.ID);
                 MessageBox.Show("Update successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Clear();
                 this.Close();
